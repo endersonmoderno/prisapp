@@ -4,6 +4,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>Web</Name>
     <RootNamespace>Web</RootNamespace>
+    <NameOfLastUsedPublishProfile>PrisGrupoSVB</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -235,8 +236,10 @@
     <Compile Include="src\bower_components\angular-route\angular-route.js" />
     <Compile Include="src\bower_components\angular-route\angular-route.min.js" />
     <Compile Include="src\bower_components\angular-route\index.js" />
+    <Compile Include="src\bower_components\angular-sanitize\angular-sanitize - Copy.js" />
     <Compile Include="src\bower_components\angular-sanitize\angular-sanitize.js" />
     <Compile Include="src\bower_components\angular-sanitize\angular-sanitize.min.js" />
+    <Compile Include="src\bower_components\angular-sanitize\index - Copy.js" />
     <Compile Include="src\bower_components\angular-sanitize\index.js" />
     <Compile Include="src\bower_components\angular-touch\angular-touch.js" />
     <Compile Include="src\bower_components\angular-touch\angular-touch.min.js" />
@@ -376,11 +379,13 @@
     <Compile Include="src\bower_components\jquery\src\var\toString.js" />
     <Compile Include="src\bower_components\jquery\src\wrap.js" />
     <Content Include="images\fiap-logo.svg" />
+    <Content Include="images\moto.png" />
     <Content Include="images\pig-pris.png" />
     <Content Include="index.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <None Include="PrisGrupoSVB.pubxml" />
     <Content Include="README.md" />
     <Content Include="src\app\404.html" />
     <Content Include="src\app\favicon.ico" />
@@ -388,6 +393,9 @@
     <Content Include="src\app\images\yeoman.png" />
     <Content Include="src\app\index.html" />
     <Content Include="src\app\robots.txt" />
+    <Content Include="src\app\styles\index.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\app\styles\main.css">
       <SubType>Code</SubType>
     </Content>
@@ -926,11 +934,6 @@
     <Content Include="src\bower_components\jquery\LICENSE.txt" />
     <Content Include="src\bower_components\jquery\README.md" />
     <Content Include="src\bower_components\jquery\src\.eslintrc.json" />
-    <Content Include="images\down1.png" />
-    <Content Include="images\left1.png" />
-    <Content Include="images\mid1.png" />
-    <Content Include="images\right1.png" />
-    <Content Include="images\up1.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />

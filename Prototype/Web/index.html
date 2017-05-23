@@ -3,64 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pri$ - Protótipo de Aplicativo</title>
     <link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="src/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        body {
-            font: 20px Montserrat, sans-serif;
-            line-height: 1.8;
-        }
-
-        p {
-            font-size: 16px;
-        }
-
-        .margin {
-            margin-bottom: 45px;
-        }
-
-        .bg-1 {
-            background-color: #1abc9c; /* Green */
-            color: #ffffff;
-        }
-
-        .bg-2 {
-            background-color: #474e5d; /* Dark Blue */
-            color: #ffffff;
-        }
-
-        .bg-3 {
-            background-color: #ffffff; /* White */
-            color: #555555;
-        }
-
-        .bg-4 {
-            background-color: #2f2f2f; /* Black Gray */
-            color: #fff;
-        }
-
-        .container-fluid {
-            padding-top: 19px;
-            padding-bottom: 0px;
-        }
-
-        .navbar {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            border: 0;
-            border-radius: 0;
-            margin-bottom: 0;
-            font-size: 12px;
-            letter-spacing: 5px;
-        }
-
-        .navbar-nav li a:hover {
-            color: #1abc9c !important;
-        }
-    </style>
+    <link rel="stylesheet" href="src/app/styles/index.css" />
 
 </head>
 <body style="background:#E4E7E7;">
@@ -75,32 +23,13 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="" style="width:815px; margin:0 auto;">
-                    <div class="col-md-1" style="width:42px;">
-                        <img src="images/left1.png" />
-                    </div>
-                    <div class="col-md-8 text-center" style="width:737px;">
-                        <img src="images/up1.png" />
-                    </div>
-                    <div class="col-md-1" style="width:36px;">
-                        <img src="images/right1.png" />
-                    </div>
-                </div>
-                <div style="clear:both; float:left; width:731px; margin: -123px 219px 0;">
-                    <div class="text-center" style="width:737px;">
-                        <img src="images/down1.png" />
-                    </div>
-                </div>
-                <div style="clear:both; float:left; width:130px; margin: -623px 523px 0;">
-                    <div class="text-center" style="width:129px;">
-                        <img src="images/mid1.png" />
-                    </div>
-                </div>
-                <div style="clear:both; float:left; width:304px; margin: -623px 219px 0;">
+            <div class="col-md-6">
+                <div class="col-md-6 text-center moto">
                     <iframe src="src/app/" style="border:none; height: 500px;"></iframe>
                 </div>
-                <div style="clear:both; float:left; width:304px; margin: -623px 652px 0;">
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-6 text-center moto">
                     <iframe src="src/app/" style="border:none; height: 500px;"></iframe>
                 </div>
             </div>
@@ -132,7 +61,7 @@
             </div>
             <div class="col-sm-4">
                 <h3>Principais funcionalidades Pris</h3>
-                <img src="images/pig-pris.png" class="" alt="Pris">              
+                <img src="images/pig-pris.png" class="" alt="Pris">
                 <div class="list-group">
                     <a class="list-group-item">
                         <h4 class="list-group-item-heading">Pagar</h4>
