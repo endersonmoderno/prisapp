@@ -74,3 +74,47 @@ p {
   padding-top: 60px;
   width: 347px;
 }
+
+.moto2 {
+  background-image: url("../../../images/moto.png");
+  height: 668px;
+  padding-top: 60px;
+  width: 347px;
+  margin-left: 0px;
+}
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  .moto {
+    margin-left: 35%;
+  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .moto {
+    margin-left: 30%;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .moto {
+    margin-left: 20%;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .moto {
+    margin-left: 0;
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .moto {
+    margin-left: -10%;
+  }
+}
