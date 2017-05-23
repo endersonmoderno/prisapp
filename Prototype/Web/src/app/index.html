@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/angular/angular-csp.css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="prisappApp">
+  <!--[if lte IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <!-- Add your site or application content here -->
+  <div ng-controller="AppCtrl" class="header">
+
+    <section layout="row" flex>
+      <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+        <md-toolbar class="md-theme-indigo" style="background-color: green;">
+          <img style="width:103px;" src="images/yeoman.png" />
+          <p>
+            Dados da pessoa Logada
+          </p>
+        </md-toolbar>
+        <md-content layout-margin>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="#/" ng-click="toggleLeft()">Home</a></li>
+            <li><a ng-href="#/about" ng-click="toggleLeft()">About</a></li>
+            <li><a ng-href="#/" ng-click="toggleLeft()">Contact</a></li>
+          </ul>
+        </md-content>
+      </md-sidenav>
+    </section>
+
+    <div class="navbar navbar-default" role="navigation" style="background-image: linear-gradient(to bottom, green 90%, #f8f8f8 100%);">
+      <div class="container">
+        <div class="">
+          <div style="width:20%; float:left;">
+            <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Menu">
+              <md-icon md-svg-icon="images/menu.svg"></md-icon>
+            </md-button>
+          </div>
+          <div style="width:63%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              <span style="font-size:10px;">Dinheiro no Pri$</span> - R$ 0,00
+            </p>
+          </div>
+          <div style="width:17%; float:left;">
+            <button type="button" class="btn btn-default btn-sm" style="margin-top:7px;">
+              <span class="glyphicon glyphicon-bell"></span> (3)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div ng-view=""></div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <p>Fintech - 47NEG - FIAP</p>
+    </div>
+  </div>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-aria/angular-aria.js"></script>
+  <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="../bower_components/angular-messages/angular-messages.js"></script>
+  <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="../bower_components/angular-touch/angular-touch.js"></script>
+  <script src="../bower_components/angular-material/angular-material.js"></script>
+  <script src="../bower_components/angular-material/angular-material-mocks.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
