@@ -80,7 +80,6 @@ p {
   height: 668px;
   padding-top: 60px;
   width: 347px;
-  margin-left: 0px;
 }
 
 
@@ -89,6 +88,9 @@ p {
   .moto {
     margin-left: 35%;
   }
+  .moto2 {
+    margin-left: 0px;
+  }
 }
 
 /* Landscape tablets and medium desktops */
@@ -96,12 +98,18 @@ p {
   .moto {
     margin-left: 30%;
   }
+  .moto2 {
+    margin-left: 0px;
+  }
 }
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
   .moto {
-    margin-left: 20%;
+    margin-left: 25%;
+  }
+  .moto2 {
+    margin-left: 25%;
   }
 }
 
@@ -110,11 +118,17 @@ p {
   .moto {
     margin-left: 0;
   }
+  .moto2 {
+    margin-left: 0;
+  }
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
   .moto {
+    margin-left: -10%;
+  }
+  .moto2 {
     margin-left: -10%;
   }
 }
