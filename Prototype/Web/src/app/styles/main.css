@@ -1,1 +1,26 @@
-﻿
+﻿.fotomenu {
+  float: left;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 80px;
+}
+
+.nomecxmenu {
+  width: 135px;
+  float: left;
+  padding-top: 10px;
+}
+
+.nomemenu {
+  font-size: 14px;
+}
+
+.loginmenu {
+  font-size: 10px;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}

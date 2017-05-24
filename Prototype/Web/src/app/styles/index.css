@@ -33,7 +33,7 @@ p {
 
 .container-fluid {
   padding-top: 19px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .navbar {
@@ -47,35 +47,28 @@ p {
 }
 
 .navbar-nav li a:hover {
-  color: #1abc9c !important;
+  color: #1abc9c;
 }
 
 @media (min-width: 768px) {
   .container, .navbar {
-    width: 750px !important;
+    width: 750px;
   }
 }
 
 @media (min-width: 992px) {
   .container, .navbar {
-    width: 970px !important;
+    width: 970px;
   }
 }
 
 @media (min-width: 1200px) {
   .container, .navbar {
-    width: 1170px !important;
+    width: 1170px;
   }
 }
 
 .moto {
-  background-image: url("../../../images/moto.png");
-  height: 668px;
-  padding-top: 60px;
-  width: 347px;
-}
-
-.moto2 {
   background-image: url("../../../images/moto.png");
   height: 668px;
   padding-top: 60px;
@@ -89,7 +82,7 @@ p {
     margin-left: 35%;
   }
   .moto2 {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 
@@ -99,7 +92,7 @@ p {
     margin-left: 30%;
   }
   .moto2 {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 

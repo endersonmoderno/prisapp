@@ -389,7 +389,12 @@
     <Content Include="README.md" />
     <Content Include="src\app\404.html" />
     <Content Include="src\app\favicon.ico" />
+    <Content Include="src\app\images\alexandre.png" />
+    <Content Include="src\app\images\enderson.png" />
+    <Content Include="src\app\images\mariaalice.png" />
     <Content Include="src\app\images\menu.svg" />
+    <Content Include="src\app\images\pedro.png" />
+    <Content Include="src\app\images\renata.png" />
     <Content Include="src\app\images\yeoman.png" />
     <Content Include="src\app\index.html" />
     <Content Include="src\app\robots.txt" />

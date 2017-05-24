@@ -1,23 +1,51 @@
-﻿<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+﻿<div ng-cloak style="margin-top:0;">
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Todos">
+        <md-content class="md-padding">
+          <md-subheader class="md-no-sticky">Todos</md-subheader>
+          <md-list-item class="md-2-line" ng-repeat="item in items">
+            <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
+                 ng-if="item.foto" />
+            <div class="md-list-item-text">
+              <p style="font-size:10px;"> {{ item.login }} </p>
+              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
+              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
+              <p> {{ item.data }} </p>
+            </div>
+          </md-list-item>
+        </md-content>
+      </md-tab>
+      <md-tab label="Recebidos">
+        <md-content class="md-padding">
+          <md-subheader class="md-no-sticky">Recebidos</md-subheader>
+          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'-' }">
+            <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
+                 ng-if="item.foto" />
+            <div class="md-list-item-text">
+              <p style="font-size:10px;"> {{ item.login }} </p>
+              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
+              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
+              <p> {{ item.data }} </p>
+            </div>
+          </md-list-item>
+        </md-content>
+      </md-tab>
+      <md-tab label="Pagos">
+        <md-content class="md-padding">
+          <md-subheader class="md-no-sticky">Pagos</md-subheader>
+          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'+' }">
+            <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
+                 ng-if="item.foto" />
+            <div class="md-list-item-text">
+              <p style="font-size:10px;"> {{ item.login }} </p>
+              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
+              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
+              <p> {{ item.data }} </p>
+            </div>
+          </md-list-item>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
 </div>
