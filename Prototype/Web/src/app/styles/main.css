@@ -24,3 +24,27 @@
   margin: 0;
   padding: 0;
 }
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000;
+  color:#fff;
+}
+
+.lock-size {
+  float: right;
+  margin: -175px 20px 0 0;
+}
+
+.btfab {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btfab2 {
+  font-size: 9px;
+  font-weight: bold;
+}

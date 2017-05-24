@@ -15,7 +15,7 @@ angular.module('prisappApp')
             'Karma'
         ];
 
-        var imagePath = 'images/enderson.png';
+        $scope.isOpen = false;
 
         $scope.items = [
             {
