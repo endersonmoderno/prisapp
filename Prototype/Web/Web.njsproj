@@ -394,6 +394,7 @@
     <Content Include="src\app\images\mariaalice.png" />
     <Content Include="src\app\images\menu.svg" />
     <Content Include="src\app\images\pedro.png" />
+    <Content Include="src\app\images\piola.png" />
     <Content Include="src\app\images\renata.png" />
     <Content Include="src\app\images\yeoman.png" />
     <Content Include="src\app\index.html" />

@@ -3,7 +3,6 @@
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Todos">
         <md-content class="md-padding">
-          <md-subheader class="md-no-sticky">Todos</md-subheader>
           <md-list-item class="md-2-line" ng-repeat="item in items">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
                  ng-if="item.foto" />
@@ -18,7 +17,6 @@
       </md-tab>
       <md-tab label="Recebidos">
         <md-content class="md-padding">
-          <md-subheader class="md-no-sticky">Recebidos</md-subheader>
           <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'-' }">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
                  ng-if="item.foto" />
@@ -33,7 +31,6 @@
       </md-tab>
       <md-tab label="Pagos">
         <md-content class="md-padding">
-          <md-subheader class="md-no-sticky">Pagos</md-subheader>
           <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'+' }">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
                  ng-if="item.foto" />
@@ -58,11 +55,11 @@
     </md-fab-trigger>
 
     <md-fab-actions>
-      <md-button aria-label="Pagar" class="md-fab md-raised">
+      <md-button aria-label="Pagar" class="md-fab md-raised" style="background-color:deepskyblue;">
         <p class="btfab">Pagar</p>
       </md-button>
-      <md-button aria-label="Receber" class="md-fab md-raised">
-        <p class="btfab2">Receber</p>
+      <md-button aria-label="Receber" class="md-fab md-raised" style="background-color:greenyellow;">
+        <p class="btfab2">Cobrar</p>
       </md-button>
     </md-fab-actions>
   </md-fab-speed-dial>

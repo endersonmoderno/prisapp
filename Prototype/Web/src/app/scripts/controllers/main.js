@@ -45,6 +45,13 @@ angular.module('prisappApp')
                 data: '29/05/2017 16h33m',
                 foto: 'images/pedro.png',
                 tipo: '+'
+            },
+            {
+                login: '@marcelo.piola',
+                valor: 'R$ 12,00',
+                data: '01/03/2017 17h07m',
+                foto: 'images/piola.png',
+                tipo: '-'
             }
         ];
 
