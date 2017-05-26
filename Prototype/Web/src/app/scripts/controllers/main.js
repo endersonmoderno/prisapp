@@ -47,7 +47,7 @@ angular.module('prisappApp')
                 tipo: '+'
             },
             {
-                login: '@marcelo.piola',
+                login: '@marcello.piola',
                 valor: 'R$ 12,00',
                 data: '01/03/2017 17h07m',
                 foto: 'images/piola.png',
