@@ -32,6 +32,7 @@
     <Compile Include="server.js" />
     <Compile Include="src\app\scripts\app.js" />
     <Compile Include="src\app\scripts\controllers\about.js" />
+    <Compile Include="src\app\scripts\controllers\login.js" />
     <Compile Include="src\app\scripts\controllers\main.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.min.js" />
@@ -394,9 +395,9 @@
     <Content Include="src\app\images\mariaalice.png" />
     <Content Include="src\app\images\menu.svg" />
     <Content Include="src\app\images\pedro.png" />
+    <Content Include="src\app\images\pig.png" />
     <Content Include="src\app\images\piola.png" />
     <Content Include="src\app\images\renata.png" />
-    <Content Include="src\app\images\yeoman.png" />
     <Content Include="src\app\index.html" />
     <Content Include="src\app\robots.txt" />
     <Content Include="src\app\styles\index.css">
@@ -406,6 +407,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\app\views\about.html" />
+    <Content Include="src\app\views\login.html" />
     <Content Include="src\app\views\main.html" />
     <Content Include="src\bower_components\angular-animate\.bower.json" />
     <Content Include="src\bower_components\angular-animate\angular-animate.min.js.map" />

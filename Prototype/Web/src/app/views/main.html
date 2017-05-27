@@ -1,5 +1,5 @@
 ﻿<div ng-cloak class="gridmain">
-  <md-content>
+  <md-content ng-cloak>
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Todos">
         <md-content class="md-padding">
@@ -46,8 +46,8 @@
     </md-tabs>
   </md-content>
 </div>
-<div class="lock-size" layout="row" layout-align="center center" ng-cloak>
-  <md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling">
+<div ng-cloak class="lock-size" layout="row" layout-align="center center">
+  <md-fab-speed-dial ng-cloak md-open="isOpen" md-direction="up" class="md-fling">
     <md-fab-trigger>
       <md-button aria-label="menu" class="md-fab md-warn">
         <i class="fa fa-bars" aria-hidden="true"></i>

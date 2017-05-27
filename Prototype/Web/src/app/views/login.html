@@ -1,0 +1,24 @@
+﻿<div ng-cloak class="logintela">
+  <md-content class="md-no-momentum logotipologin">
+
+    <md-input-container class="md-icon-float md-block" style="margin-top:215px;">
+      <md-icon class="login"><i class="fa fa-user" aria-hidden="true"></i></md-icon>
+      <input ng-model="user.login" type="text" placeholder="Informe seu login" ng-required="true">
+    </md-input-container>
+    <md-input-container class="md-block">
+      <md-icon class="password"><i class="fa fa-unlock-alt" aria-hidden="true"></i></md-icon>
+      <input ng-model="user.email" type="password" placeholder="Informe sua senha" ng-required="true">
+    </md-input-container>
+    <md-button ng-href="#/main" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Entrar</md-button>
+
+    <hr />
+
+    <div class="text-center">ou entre com</div>
+
+    <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+      <md-button ng-href="#/main" class="md-raised md-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</md-button>
+      <md-button ng-href="#/main" class="md-raised md-warn"><i class="fa fa-google-plus" aria-hidden="true"></i> Google +</md-button>
+    </section>
+
+  </md-content>
+</div>

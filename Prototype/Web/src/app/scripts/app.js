@@ -25,6 +25,11 @@ angular
 
         $routeProvider
             .when('/', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'login'
+            })
+            .when('/main', {
                 templateUrl: 'views/main.html',
                 controller: 'MainCtrl',
                 controllerAs: 'main'
@@ -38,9 +43,11 @@ angular
                 redirectTo: '/'
             });
     })
-    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav) {
+    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route) {
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
+
+        $scope.$route = $route;
 
         function buildToggler(componentId) {
             return function () {

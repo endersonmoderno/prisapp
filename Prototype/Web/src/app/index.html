@@ -19,12 +19,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- endbuild -->
 </head>
-<body ng-app="prisappApp">
+<body ng-app="prisappApp" ng-cloak>
   <!--[if lte IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <!-- Add your site or application content here -->
-  <div ng-controller="AppCtrl" class="header">
+  <div ng-cloak ng-controller="AppCtrl" class="header">
 
     <section layout="row" flex>
       <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
@@ -42,19 +42,24 @@
         </md-toolbar>
         <md-content layout-margin>
           <ul class="nav nav-pills nav-stacked">
-            <li><a ng-href="#/" ng-click="toggleLeft()"><i class="fa fa-home" aria-hidden="true"></i> Início</a></li>
+            <li><a ng-href="#/main" ng-click="toggleLeft()"><i class="fa fa-home" aria-hidden="true"></i> Início</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-trophy" aria-hidden="true"></i> Conquistas</a></li>
+            <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-users" aria-hidden="true"></i> Contatos</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Dinheiro</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-university" aria-hidden="true"></i> Transferir para o Banco</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investimentos</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-cog" aria-hidden="true"></i> Ajustes</a></li>
+            <li><a ng-href="#/login" ng-click="toggleLeft()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
           </ul>
         </md-content>
       </md-sidenav>
     </section>
-
-    <div class="navbar navbar-default" role="navigation" style="background-image: linear-gradient(to bottom, green 90%, #f8f8f8 100%);">
+    
+    <div ng-hide="$route.current.loadedTemplateUrl == 'views/login.html'" 
+         class="navbar navbar-default" 
+         role="navigation" 
+         style="background-image: linear-gradient(to bottom, green 90%, #f8f8f8 100%);">
       <div class="container">
         <div class="">
           <div style="width:20%; float:left;">
@@ -78,11 +83,11 @@
 
   </div>
 
-  <div class="container" style="margin-top: -20px;">
+  <div ng-cloak class="container" style="margin-top: -20px;">
     <div ng-view=""></div>
   </div>
 
-  <div class="footer">
+  <div ng-cloak class="footer">
     <div class="container">
       
     </div>
@@ -110,6 +115,8 @@
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/about.js"></script>
+  <script src="scripts/controllers/logincontroller.js"></script>
+  <script src="scripts/controllers/login.js"></script>
   <!-- endbuild -->
 </body>
 </html>
