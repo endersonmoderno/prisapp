@@ -39,6 +39,11 @@ angular
                 controller: 'ConquistasCtrl',
                 controllerAs: 'conquistas'
             })
+            .when('/contatos', {
+                templateUrl: 'views/contatos.html',
+                controller: 'ContatosCtrl',
+                controllerAs: 'contatos'
+            })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl',
