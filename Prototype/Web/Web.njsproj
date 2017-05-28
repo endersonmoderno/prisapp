@@ -394,6 +394,10 @@
     <Content Include="src\app\images\alexandre.png" />
     <Content Include="src\app\images\enderson.png" />
     <Content Include="src\app\images\mariaalice.png" />
+    <Content Include="src\app\images\medalhas1.jpg" />
+    <Content Include="src\app\images\medalhas2.jpg" />
+    <Content Include="src\app\images\medalhas3.jpg" />
+    <Content Include="src\app\images\medalhas4.jpg" />
     <Content Include="src\app\images\menu.svg" />
     <Content Include="src\app\images\pedro.png" />
     <Content Include="src\app\images\pig.png" />

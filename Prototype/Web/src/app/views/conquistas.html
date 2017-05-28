@@ -1,1 +1,29 @@
-<p>This is the conquistas view.</p>
+﻿<div ng-cloak class="row">
+  <div class="col-md-12 text-center">
+
+    <h3>Total de Pontos: 1300 pts</h3>
+
+    <img src="images/medalhas3.jpg" style="width:260px;" /><br />
+    <img src="images/medalhas4.jpg" style="width:260px;" /><br />
+    <img src="images/medalhas1.jpg" style="width:260px;" /><br />
+    <img src="images/medalhas2.jpg" style="width:260px;" /><br />
+
+  </div>
+</div>
+<hr />
+<div ng-cloak class="row">
+  <div class="col-md-12 text-center">
+    <h3>Ranking</h3>
+
+    <md-list-item class="md-2-line" ng-repeat="item in items">
+      <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
+           ng-if="item.foto" />
+      <div class="md-list-item-text">
+        <p style="font-size:10px;"> {{ item.login }} </p>
+        <h3 style="color:darkred;" ng-if="item.ativo != 'sim'"> {{ item.valor }} pts </h3>
+        <h3 style="color:darkgreen;" ng-if="item.ativo == 'sim'"> {{ item.valor }} pts </h3>
+      </div>
+    </md-list-item>
+
+  </div>
+</div>
