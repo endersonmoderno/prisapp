@@ -32,6 +32,7 @@
     <Compile Include="server.js" />
     <Compile Include="src\app\scripts\app.js" />
     <Compile Include="src\app\scripts\controllers\about.js" />
+    <Compile Include="src\app\scripts\controllers\conquistas.js" />
     <Compile Include="src\app\scripts\controllers\login.js" />
     <Compile Include="src\app\scripts\controllers\main.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.js" />
@@ -407,6 +408,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\app\views\about.html" />
+    <Content Include="src\app\views\conquistas.html" />
     <Content Include="src\app\views\login.html" />
     <Content Include="src\app\views\main.html" />
     <Content Include="src\bower_components\angular-animate\.bower.json" />
