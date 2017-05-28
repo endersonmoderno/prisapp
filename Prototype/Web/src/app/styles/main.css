@@ -62,13 +62,14 @@
 }
 
 .btentrar {
-  width: 90%;
+  width: 94%;
   margin-top: -15px;
   background-color: darkgreen;
 }
 
 .logotipologin {
-  background-image: linear-gradient(to bottom, rgba(0,165,0,0.6) 0%,rgba(0,0,0,0) 100%), url('../images/pig.png');
+  background-image: linear-gradient(to bottom, rgba(0,165,0,0.3) 10%,rgba(0,0,0,0) 100%), url('../images/pig.png');
   background-repeat: no-repeat;
   background-position: top center;
+  background-position-y: 20px;
 }
