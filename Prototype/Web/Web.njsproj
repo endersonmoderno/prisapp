@@ -35,6 +35,7 @@
     <Compile Include="src\app\scripts\controllers\cartaonovo.js" />
     <Compile Include="src\app\scripts\controllers\cartoes.js" />
     <Compile Include="src\app\scripts\controllers\conquistas.js" />
+    <Compile Include="src\app\scripts\controllers\contato.js" />
     <Compile Include="src\app\scripts\controllers\contatos.js" />
     <Compile Include="src\app\scripts\controllers\login.js" />
     <Compile Include="src\app\scripts\controllers\main.js" />
@@ -418,6 +419,7 @@
     <Content Include="src\app\views\cartaonovo.html" />
     <Content Include="src\app\views\cartoes.html" />
     <Content Include="src\app\views\conquistas.html" />
+    <Content Include="src\app\views\contato.html" />
     <Content Include="src\app\views\contatos.html" />
     <Content Include="src\app\views\login.html" />
     <Content Include="src\app\views\main.html" />

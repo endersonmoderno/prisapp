@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('ContatosCtrl', function ($scope) {
+    .controller('ContatosCtrl', function ($scope, $location) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -42,5 +42,9 @@ angular.module('prisappApp')
             nome: 'Renta Bischoff'
         }
     ];
+
+    $scope.verpessoa = function (login) {
+        $location.url('/contato/' + login);
+    };
 
   });

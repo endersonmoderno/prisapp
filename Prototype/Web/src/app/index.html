@@ -102,6 +102,13 @@
             </md-input-container>
           </div>
 
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/contato.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Contato
+            </p>
+          </div>
+
           <div ng-if="$route.current.loadedTemplateUrl == 'views/cartoes.html'"
                style="width:78%; float:left;">
             <p style="padding-top:10px; color:white; font-size:15px;">
@@ -161,6 +168,7 @@
   <script src="scripts/controllers/contatos.js"></script>
   <script src="scripts/controllers/cartoes.js"></script>
   <script src="scripts/controllers/cartaonovo.js"></script>
+  <script src="scripts/controllers/contato.js"></script>
   <!-- endbuild -->
 </body>
 </html>

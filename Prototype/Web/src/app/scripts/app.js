@@ -44,6 +44,11 @@ angular
                 controller: 'ContatosCtrl',
                 controllerAs: 'contatos'
             })
+            .when('/contato/:login', {
+                templateUrl: 'views/contato.html',
+                controller: 'ContatoCtrl',
+                controllerAs: 'contato'
+            })
             .when('/cartoes', {
                 templateUrl: 'views/cartoes.html',
                 controller: 'CartoesCtrl',
