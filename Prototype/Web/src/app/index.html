@@ -45,7 +45,7 @@
             <li><a ng-href="#/main" ng-click="toggleLeft()"><i class="fa fa-home" aria-hidden="true"></i> Início</a></li>
             <li><a ng-href="#/conquistas" ng-click="toggleLeft()"><i class="fa fa-trophy" aria-hidden="true"></i> Conquistas</a></li>
             <li><a ng-href="#/contatos" ng-click="toggleLeft()"><i class="fa fa-users" aria-hidden="true"></i> Contatos</a></li>
-            <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>
+            <li><a ng-href="#/cartoes" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Dinheiro</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-university" aria-hidden="true"></i> Transferir para o Banco</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investimentos</a></li>
@@ -61,7 +61,8 @@
          role="navigation" 
          style="background-image: linear-gradient(to bottom, green 90%, #f8f8f8 100%);">
       <div class="container">
-        <div class="">
+
+        <div ng-if="$route.current.loadedTemplateUrl == 'views/main.html'">
           <div style="width:20%; float:left;">
             <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Menu">
               <md-icon md-svg-icon="images/menu.svg"></md-icon>
@@ -78,6 +79,45 @@
             </button>
           </div>
         </div>
+
+        <div ng-hide="$route.current.loadedTemplateUrl == 'views/main.html'">
+          <div style="width:20%; float:left;">
+            <md-button ng-click="voltar()" class="md-icon-button" aria-label="Menu">
+              <md-icon><i class="fa fa-arrow-left" aria-hidden="true"></i></md-icon>
+            </md-button>
+          </div>
+          
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/conquistas.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Conquistas
+            </p>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/contatos.html'"
+               style="width:78%; float:left;">
+            <md-input-container ng-cloak md-no-float class="md-block" style="margin:0;">
+              <md-icon class="name"><i class="fa fa-search" aria-hidden="true"></i></md-icon>
+              <input ng-model="pesquisa.login" type="text" placeholder="Procurar pessoas" ng-required="false">
+            </md-input-container>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/cartoes.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Cartões de Crédito
+            </p>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/cartaonovo.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Novo Cartão de Crédito
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </div>
 
@@ -119,6 +159,8 @@
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/controllers/conquistas.js"></script>
   <script src="scripts/controllers/contatos.js"></script>
+  <script src="scripts/controllers/cartoes.js"></script>
+  <script src="scripts/controllers/cartaonovo.js"></script>
   <!-- endbuild -->
 </body>
 </html>

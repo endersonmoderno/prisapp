@@ -1,0 +1,18 @@
+﻿<div ng-cloak class="row">
+  <div class="col-md-12 text-center">
+
+    <md-button ng-href="#/cartaonovo" class="md-raised md-primary btnormal" style="background-color: darkgreen;">Adicionar Cartão de Crédito</md-button>
+
+    <md-content>
+      <md-list flex>
+        <md-divider></md-divider>
+        <md-list-item ng-repeat="item in items">
+          <p><i class="fa fa-{{item.tipo}}" aria-hidden="true"></i> {{ item.nome }} </p>
+          <md-checkbox class="md-secondary" ng-model="item.check"></md-checkbox>
+          <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
+    </md-content>
+
+  </div>
+</div>

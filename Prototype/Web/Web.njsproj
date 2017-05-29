@@ -32,6 +32,8 @@
     <Compile Include="server.js" />
     <Compile Include="src\app\scripts\app.js" />
     <Compile Include="src\app\scripts\controllers\about.js" />
+    <Compile Include="src\app\scripts\controllers\cartaonovo.js" />
+    <Compile Include="src\app\scripts\controllers\cartoes.js" />
     <Compile Include="src\app\scripts\controllers\conquistas.js" />
     <Compile Include="src\app\scripts\controllers\contatos.js" />
     <Compile Include="src\app\scripts\controllers\login.js" />
@@ -413,6 +415,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="src\app\views\about.html" />
+    <Content Include="src\app\views\cartaonovo.html" />
+    <Content Include="src\app\views\cartoes.html" />
     <Content Include="src\app\views\conquistas.html" />
     <Content Include="src\app\views\contatos.html" />
     <Content Include="src\app\views\login.html" />

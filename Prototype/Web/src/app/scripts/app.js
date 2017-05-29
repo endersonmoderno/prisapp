@@ -44,6 +44,16 @@ angular
                 controller: 'ContatosCtrl',
                 controllerAs: 'contatos'
             })
+            .when('/cartoes', {
+                templateUrl: 'views/cartoes.html',
+                controller: 'CartoesCtrl',
+                controllerAs: 'cartoes'
+            })
+            .when('/cartaonovo', {
+                templateUrl: 'views/cartaonovo.html',
+                controller: 'CartaonovoCtrl',
+                controllerAs: 'cartaonovo'
+            })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl',
@@ -53,11 +63,17 @@ angular
                 redirectTo: '/'
             });
     })
-    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route) {
+    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window) {
+
+        $scope.$route = $route;
+
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
 
-        $scope.$route = $route;
+
+        $scope.voltar = function () {
+            $window.history.back();
+        };
 
         function buildToggler(componentId) {
             return function () {

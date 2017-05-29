@@ -64,7 +64,6 @@
 .btentrar {
   width: 94%;
   margin-top: -15px;
-  background-color: darkgreen;
 }
 
 .logotipologin {
@@ -72,4 +71,13 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-position-y: 20px;
+}
+
+.md-toolbar.md-default-theme.md-hue-3:not(.md-menu-toolbar), md-toolbar.md-hue-3:not(.md-menu-toolbar) {
+  color: darkgreen;
+  background-color: darkseagreen;
+}
+
+.btnormal {
+  width: 94%;
 }
