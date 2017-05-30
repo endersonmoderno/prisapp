@@ -64,6 +64,11 @@ angular
                 controller: 'DinheiroCtrl',
                 controllerAs: 'dinheiro'
             })
+            .when('/banco', {
+                templateUrl: 'views/banco.html',
+                controller: 'BancoCtrl',
+                controllerAs: 'banco'
+            })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl',
