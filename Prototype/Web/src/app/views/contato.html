@@ -1,1 +1,69 @@
-﻿<p>Detalhes de {{login}}</p>
+﻿<div class="row" style="width:100%;">
+  <div class="fotomenu">
+    <img class="img-circle" style="width:75px;" src="{{obj.foto}}" />
+  </div>
+  <div class="nomecxmenu">
+    <p class="nomemenu">{{obj.nome}}</p>
+    <p class="loginmenu">{{obj.login}}</p>
+    <p class="nomemenu">{{obj.pontos}} pts</p>
+  </div>
+</div>
+<div style="clear:both;"></div>
+<md-divider></md-divider>
+<div ng-cloak class="gridcontato">
+  <md-content ng-cloak>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Todos">
+        <md-content class="md-padding">
+          <md-list-item class="md-2-line" ng-repeat="item in obj.transacoes">
+            <div class="md-list-item-text">
+              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
+              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
+              <p> {{ item.data }} </p>
+            </div>
+          </md-list-item>
+        </md-content>
+      </md-tab>
+      <md-tab label="Recebidos">
+        <md-content class="md-padding">
+          <md-list-item class="md-2-line" ng-repeat="item in obj.transacoes | filter:{ tipo: '!'+'-' }">
+            <div class="md-list-item-text">
+              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
+              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
+              <p> {{ item.data }} </p>
+            </div>
+          </md-list-item>
+        </md-content>
+      </md-tab>
+      <md-tab label="Pagos">
+        <md-content class="md-padding">
+          <md-list-item class="md-2-line" ng-repeat="item in obj.transacoes | filter:{ tipo: '!'+'+' }">
+            <div class="md-list-item-text">
+              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
+              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
+              <p> {{ item.data }} </p>
+            </div>
+          </md-list-item>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>
+<div ng-cloak class="lock-size" layout="row" layout-align="center center">
+  <md-fab-speed-dial ng-cloak md-open="isOpen" md-direction="up" class="md-fling">
+    <md-fab-trigger>
+      <md-button aria-label="menu" class="md-fab md-warn">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </md-button>
+    </md-fab-trigger>
+
+    <md-fab-actions>
+      <md-button aria-label="Pagar" class="md-fab md-raised" style="background-color:deepskyblue;">
+        <p class="btfab">Pagar</p>
+      </md-button>
+      <md-button aria-label="Receber" class="md-fab md-raised" style="background-color:greenyellow;">
+        <p class="btfab2">Cobrar</p>
+      </md-button>
+    </md-fab-actions>
+  </md-fab-speed-dial>
+</div>
