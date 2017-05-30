@@ -46,7 +46,7 @@
             <li><a ng-href="#/conquistas" ng-click="toggleLeft()"><i class="fa fa-trophy" aria-hidden="true"></i> Conquistas</a></li>
             <li><a ng-href="#/contatos" ng-click="toggleLeft()"><i class="fa fa-users" aria-hidden="true"></i> Contatos</a></li>
             <li><a ng-href="#/cartoes" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>
-            <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Dinheiro</a></li>
+            <li><a ng-href="#/dinheiro" ng-click="toggleLeft()"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Dinheiro</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-university" aria-hidden="true"></i> Transferir para o Banco</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investimentos</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-cog" aria-hidden="true"></i> Ajustes</a></li>
@@ -123,6 +123,13 @@
             </p>
           </div>
 
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/dinheiro.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Adicionar Dinheiro
+            </p>
+          </div>
+
         </div>
 
       </div>
@@ -169,6 +176,7 @@
   <script src="scripts/controllers/cartoes.js"></script>
   <script src="scripts/controllers/cartaonovo.js"></script>
   <script src="scripts/controllers/contato.js"></script>
+  <script src="scripts/controllers/dinheiro.js"></script>
   <!-- endbuild -->
 </body>
 </html>

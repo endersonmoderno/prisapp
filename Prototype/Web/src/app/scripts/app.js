@@ -59,6 +59,11 @@ angular
                 controller: 'CartaonovoCtrl',
                 controllerAs: 'cartaonovo'
             })
+            .when('/dinheiro', {
+                templateUrl: 'views/dinheiro.html',
+                controller: 'DinheiroCtrl',
+                controllerAs: 'dinheiro'
+            })
             .when('/about', {
                 templateUrl: 'views/about.html',
                 controller: 'AboutCtrl',
