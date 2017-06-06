@@ -39,8 +39,13 @@
     <Compile Include="src\app\scripts\controllers\contato.js" />
     <Compile Include="src\app\scripts\controllers\contatos.js" />
     <Compile Include="src\app\scripts\controllers\dinheiro.js" />
+    <Compile Include="src\app\scripts\controllers\investimento.js" />
     <Compile Include="src\app\scripts\controllers\login.js" />
     <Compile Include="src\app\scripts\controllers\main.js" />
+    <Compile Include="src\app\scripts\controllers\pagar.js" />
+    <Compile Include="src\app\scripts\controllers\pagarone.js" />
+    <Compile Include="src\app\scripts\controllers\receber.js" />
+    <Compile Include="src\app\scripts\controllers\receberone.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.min.js" />
     <Compile Include="src\bower_components\angular-animate\index.js" />
@@ -425,8 +430,13 @@
     <Content Include="src\app\views\contato.html" />
     <Content Include="src\app\views\contatos.html" />
     <Content Include="src\app\views\dinheiro.html" />
+    <Content Include="src\app\views\investimento.html" />
     <Content Include="src\app\views\login.html" />
     <Content Include="src\app\views\main.html" />
+    <Content Include="src\app\views\pagar.html" />
+    <Content Include="src\app\views\pagarone.html" />
+    <Content Include="src\app\views\receber.html" />
+    <Content Include="src\app\views\receberone.html" />
     <Content Include="src\bower_components\angular-animate\.bower.json" />
     <Content Include="src\bower_components\angular-animate\angular-animate.min.js.map" />
     <Content Include="src\bower_components\angular-animate\bower.json" />

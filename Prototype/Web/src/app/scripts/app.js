@@ -74,6 +74,31 @@ angular
                 controller: 'AboutCtrl',
                 controllerAs: 'about'
             })
+            .when('/receber', {
+              templateUrl: 'views/receber.html',
+              controller: 'ReceberCtrl',
+              controllerAs: 'receber'
+            })
+            .when('/pagar', {
+              templateUrl: 'views/pagar.html',
+              controller: 'PagarCtrl',
+              controllerAs: 'pagar'
+            })
+            .when('/investimento', {
+              templateUrl: 'views/investimento.html',
+              controller: 'InvestimentoCtrl',
+              controllerAs: 'investimento'
+            })
+            .when('/pagarone/:login', {
+              templateUrl: 'views/pagarone.html',
+              controller: 'PagaroneCtrl',
+              controllerAs: 'pagarone'
+            })
+            .when('/receberone/:login', {
+              templateUrl: 'views/receberone.html',
+              controller: 'ReceberoneCtrl',
+              controllerAs: 'receberone'
+            })
             .otherwise({
                 redirectTo: '/'
             });

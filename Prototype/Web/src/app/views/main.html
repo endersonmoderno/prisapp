@@ -55,11 +55,11 @@
     </md-fab-trigger>
 
     <md-fab-actions>
-      <md-button aria-label="Pagar" class="md-fab md-raised" style="background-color:deepskyblue;">
-        <p class="btfab">Pagar</p>
+      <md-button ng-click="fnpagar()" aria-label="Pagar" class="md-fab md-raised" style="background-color:deepskyblue;">
+        <p ng-click="fnpagar()" class="btfab">Pagar</p>
       </md-button>
-      <md-button aria-label="Receber" class="md-fab md-raised" style="background-color:greenyellow;">
-        <p class="btfab2">Cobrar</p>
+      <md-button ng-click="fnreceber()" aria-label="Receber" class="md-fab md-raised" style="background-color:greenyellow;">
+        <p ng-click="fnreceber()" class="btfab2">Cobrar</p>
       </md-button>
     </md-fab-actions>
   </md-fab-speed-dial>

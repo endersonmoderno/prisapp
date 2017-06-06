@@ -48,7 +48,7 @@
             <li><a ng-href="#/cartoes" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>
             <li><a ng-href="#/dinheiro" ng-click="toggleLeft()"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Dinheiro</a></li>
             <li><a ng-href="#/banco" ng-click="toggleLeft()"><i class="fa fa-university" aria-hidden="true"></i> Transferir para o Banco</a></li>
-            <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investimentos</a></li>
+            <li><a ng-href="#/investimento" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investimentos</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-cog" aria-hidden="true"></i> Ajustes</a></li>
             <li><a ng-href="#/login" ng-click="toggleLeft()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
           </ul>
@@ -137,6 +137,40 @@
             </p>
           </div>
 
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/investimento.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Investir Dinheiro
+            </p>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/receber.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Cobrar
+            </p>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/pagar.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Pagar
+            </p>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/receberone.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Cobrar
+            </p>
+          </div>
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/pagarone.html'"
+               style="width:78%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
+              Pagar
+            </p>
+          </div>
+
           <div ng-if="$route.current.loadedTemplateUrl == 'views/about.html'"
                style="width:78%; float:left;">
             <p style="padding-top:10px; color:white; font-size:15px;">
@@ -192,6 +226,11 @@
   <script src="scripts/controllers/contato.js"></script>
   <script src="scripts/controllers/dinheiro.js"></script>
   <script src="scripts/controllers/banco.js"></script>
+  <script src="scripts/controllers/investimento.js"></script>
+  <script src="scripts/controllers/pagar.js"></script>
+  <script src="scripts/controllers/receber.js"></script>
+  <script src="scripts/controllers/pagarone.js"></script>
+  <script src="scripts/controllers/receberone.js"></script>
   <!-- endbuild -->
 </body>
 </html>

@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('MainCtrl', function ($scope) {
+    .controller('MainCtrl', function ($scope, $location) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -54,5 +54,13 @@ angular.module('prisappApp')
                 tipo: '-'
             }
         ];
+
+        $scope.fnpagar = function () {
+            $location.url('/pagar');
+        };
+
+        $scope.fnreceber = function () {
+            $location.url('/receber');
+        };
 
     });

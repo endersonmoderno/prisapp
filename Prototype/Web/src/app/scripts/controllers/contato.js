@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('ContatoCtrl', function ($scope, $routeParams) {
+    .controller('ContatoCtrl', function ($scope, $routeParams, $location) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -140,4 +140,12 @@ angular.module('prisappApp')
                 $scope.obj = obj;
             }
         });
+
+        $scope.fnpagar = function (login) {
+            $location.url('/pagarone/' + login);
+        };
+
+        $scope.fnreceber = function (login) {
+            $location.url('/receberone/' + login);
+        };
     });
