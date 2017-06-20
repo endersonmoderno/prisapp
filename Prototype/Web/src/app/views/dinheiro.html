@@ -1,7 +1,7 @@
 ﻿<div ng-cloak class="row">
   <div class="col-md-12 text-center">
 
-    <h2>Informe o Valor:</h2>
+    <h3>Informe o Valor:</h3>
     <md-input-container ng-cloak md-no-float class="md-block" style="width:95%;">
       <md-icon class="name"><i class="fa fa-money" aria-hidden="true"></i></md-icon>
       <input ng-model="pesquisa.login" type="text" placeholder="0,00" ng-required="true">
@@ -9,23 +9,24 @@
 
     <hr />
 
-    <md-content>
-      <p>Selecione a forma de recarga:</p>
-      <md-list flex>
-        <md-divider></md-divider>
-        <md-list-item ng-repeat="item in items">
+    <p>Selecione a forma de recarga:</p>
+    
+    <hr />
+
+    <md-content style="padding:10px;">
+      <md-radio-group class="md-primary">
+        <md-radio-button ng-repeat="item in items"
+                         ng-value="item.tipo"
+                         ng-class="md-align-top-right">
           <p><i class="fa fa-{{item.tipo}}" aria-hidden="true"></i> {{ item.nome }} </p>
-          <input type="radio" name="radio[]" class="md-secondary" ng-model="item.check" />
-          <md-divider></md-divider>
-        </md-list-item>
-      </md-list>
+        </md-radio-button>
+      </md-radio-group>
     </md-content>
 
-    <md-button class="md-raised md-primary btnormal" style="background-color: darkgreen;">Recarregar</md-button>
+    <md-button ng-click="voltar()" class="md-raised md-primary btnormal" style="background-color: darkgreen;">Recarregar</md-button>
 
   </div>
 </div>
-
 <style type="text/css">
   .md-errors-spacer {
     display: none;

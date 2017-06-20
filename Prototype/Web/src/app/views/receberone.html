@@ -1,29 +1,27 @@
 ﻿<div ng-cloak class="row">
   <div class="col-md-12 text-center">
 
-    <p style="font-size:10px;">Convidar pessoas</p>
-    <md-toolbar layout="row" class="md-hue-3">
-      <div class="md-toolbar-tools">
-        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-          <md-button class="md-raised md-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</md-button>
-          <md-button class="md-raised md-warn"><i class="fa fa-google-plus" aria-hidden="true"></i> Google +</md-button>
-        </section>
-      </div>
-    </md-toolbar>
+    <p><strong>Pessoas:</strong> @renata.bischoff, @marcello.piola, @maria.alice</p>
 
-    <md-content>
-      <md-list flex>
-        <md-subheader class="md-no-sticky">Seus contatos - Total 5</md-subheader>
-        <md-list-item class="md-3-line" ng-repeat="item in items" ng-click="verpessoa(item.login)">
-          <img ng-src="{{item.foto}}" class="md-avatar" alt="{{item.nome}}" />
-          <div class="md-list-item-text" layout="column">
-            <h3>{{ item.nome }}</h3>
-            <h4>{{ item.login }}</h4>
-          </div>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
-    </md-content>
+    <hr />
+
+    <h3>Informe o Valor:</h3>
+    <md-input-container ng-cloak md-no-float class="md-block" style="width:95%;">
+      <md-icon class="name"><i class="fa fa-money" aria-hidden="true"></i></md-icon>
+      <input ng-model="pesquisa.login" type="text" placeholder="0,00" ng-required="true">
+    </md-input-container>
+
+    <hr />
+    
+    Fotos
+
+    <hr />
+
+    Descrição
+
+    <hr />
+
+    <md-button class="md-raised md-primary btnormal" style="background-color: darkgreen;">Enviar</md-button>
 
   </div>
 </div>

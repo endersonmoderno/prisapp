@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('DinheiroCtrl', function ($scope) {
+    .controller('DinheiroCtrl', function ($scope, $window) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -33,4 +33,8 @@ angular.module('prisappApp')
                 nome: 'Cartão de Crédito final 4412'
             }
         ];
+
+        $scope.voltar = function () {
+            $window.history.back();
+        };
     });

@@ -8,19 +8,22 @@
   </div>
 
   <div class="col-md-12 text-center" ng-if="bancook">
-    <md-content>
-      <h2>Selecione o banco:</h2>
-      <md-list flex>
-        <md-divider></md-divider>
-        <md-list-item ng-repeat="item in items">
+    
+    <h2>Selecione o banco:</h2>
+
+    <hr />
+
+    <md-content style="padding:10px;">
+      <md-radio-group class="md-primary">
+        <md-radio-button ng-repeat="item in items"
+                         ng-value="item.tipo"
+                         ng-class="md-align-top-right">
           <p><i class="fa fa-{{item.tipo}}" aria-hidden="true"></i> {{ item.nome }} </p>
-          <input type="radio" name="radio[]" class="md-secondary" ng-model="item.check" />
-          <md-divider></md-divider>
-        </md-list-item>
-      </md-list>
+        </md-radio-button>
+      </md-radio-group>
     </md-content>
 
-    <md-button class="md-raised md-primary btnormal" style="background-color: darkgreen;">Sacar</md-button>
+    <md-button ng-click="voltar()" class="md-raised md-primary btnormal" style="background-color: darkgreen;">Sacar</md-button>
   </div>
 
 </div>

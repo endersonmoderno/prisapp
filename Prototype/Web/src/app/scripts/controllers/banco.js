@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('BancoCtrl', function ($scope) {
+    .controller('BancoCtrl', function ($scope, $window) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -22,14 +22,18 @@ angular.module('prisappApp')
         $scope.items = [
             {
                 check: true,
-                tipo: 'university',
+                tipo: 'bancoxpto',
                 nome: 'Conta Banco XPTO'
             },
             {
                 check: false,
-                tipo: 'university',
+                tipo: 'bancodigital',
                 nome: 'Conta Banco Digital'
             }
         ];
+
+        $scope.voltar = function () {
+            $window.history.back();
+        };
 
     });
