@@ -94,7 +94,7 @@ angular
               controller: 'PagaroneCtrl',
               controllerAs: 'pagarone'
             })
-            .when('/receberone/:login', {
+            .when('/receberone', {
               templateUrl: 'views/receberone.html',
               controller: 'ReceberoneCtrl',
               controllerAs: 'receberone'
@@ -103,7 +103,7 @@ angular
                 redirectTo: '/'
             });
     })
-    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window) {
+    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window, $location) {
 
         $scope.$route = $route;
 
@@ -113,6 +113,10 @@ angular
 
         $scope.voltar = function () {
             $window.history.back();
+        };
+
+        $scope.avancar = function (destino) {
+            $location.url('/' + destino);
         };
 
         function buildToggler(componentId) {

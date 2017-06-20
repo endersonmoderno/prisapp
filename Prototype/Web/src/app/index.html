@@ -145,10 +145,21 @@
           </div>
 
           <div ng-if="$route.current.loadedTemplateUrl == 'views/receber.html'"
-               style="width:78%; float:left;">
+               style="width:43%; float:left;">
             <p style="padding-top:10px; color:white; font-size:15px;">
               Cobrar
             </p>
+          </div>
+
+          <div ng-if="$route.current.loadedTemplateUrl == 'views/receber.html'"
+               style="width:37%; float:left;">
+            <p ng-click="avancar('receberone')" style="padding-top:10px; font-size:15px; float:left;">
+              <strong>avançar</strong>
+            </p>
+            <md-button ng-click="avancar('receberone')" class="md-icon-button" aria-label="avançar" 
+                       style="float:right;">
+              <md-icon><i class="fa fa-arrow-right" aria-hidden="true"></i></md-icon>
+            </md-button>
           </div>
 
           <div ng-if="$route.current.loadedTemplateUrl == 'views/pagar.html'"
