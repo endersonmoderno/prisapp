@@ -87,3 +87,10 @@
   height: 310px;
   overflow-y: scroll;
 }
+
+.reumovalor {
+  float: left;
+  margin: -145px auto 0 80px;
+  text-align: center;
+  width: 90px;
+}

@@ -1,21 +1,24 @@
 ﻿<div ng-cloak class="gridmain">
   <md-content ng-cloak>
     <md-tabs md-dynamic-height md-border-bottom>
-      <md-tab label="Todos">
+      <md-tab label="Resumo">
         <md-content class="md-padding">
-          <md-list-item class="md-2-line" ng-repeat="item in items">
-            <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
-                 ng-if="item.foto" />
-            <div class="md-list-item-text">
-              <p style="font-size:10px;"> {{ item.login }} </p>
-              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
-              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
-              <p> {{ item.data }} </p>
+          <div class="col-md-4">
+            <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas>
+            <div class="reumovalor">
+              <p>R$ 1.120,00</p>
+              <p><i class="fa fa-line-chart" aria-hidden="true"></i> 12%</p>
             </div>
-          </md-list-item>
+          </div>
+          <div style="clear:both;"></div>
+          <hr />
+          <p>Total Investido: <strong>R$ 1.000,00</strong></p>
+          <p>Rendimento (12%): <strong>R$ 120,00</strong></p>
+          <hr />
+          <md-button ng-href="#/investimento" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Investir</md-button>
         </md-content>
       </md-tab>
-      <md-tab label="Recebidos">
+      <md-tab label="Histórico">
         <md-content class="md-padding">
           <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'-' }">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
@@ -29,38 +32,6 @@
           </md-list-item>
         </md-content>
       </md-tab>
-      <md-tab label="Pagos">
-        <md-content class="md-padding">
-          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'+' }">
-            <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
-                 ng-if="item.foto" />
-            <div class="md-list-item-text">
-              <p style="font-size:10px;"> {{ item.login }} </p>
-              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
-              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
-              <p> {{ item.data }} </p>
-            </div>
-          </md-list-item>
-        </md-content>
-      </md-tab>
     </md-tabs>
   </md-content>
-</div>
-<div ng-cloak class="lock-size" layout="row" layout-align="center center">
-  <md-fab-speed-dial ng-cloak md-open="isOpen" md-direction="up" class="md-fling">
-    <md-fab-trigger>
-      <md-button aria-label="menu" class="md-fab md-warn">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-      </md-button>
-    </md-fab-trigger>
-
-    <md-fab-actions>
-      <md-button ng-click="fnpagar()" aria-label="Pagar" class="md-fab md-raised" style="background-color:deepskyblue;">
-        <p ng-click="fnpagar()" class="btfab">Pagar</p>
-      </md-button>
-      <md-button ng-click="fnreceber()" aria-label="Receber" class="md-fab md-raised" style="background-color:greenyellow;">
-        <p ng-click="fnreceber()" class="btfab2">Cobrar</p>
-      </md-button>
-    </md-fab-actions>
-  </md-fab-speed-dial>
 </div>

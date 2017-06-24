@@ -43,12 +43,12 @@
         <md-content layout-margin style="padding:0;">
           <ul class="nav nav-pills nav-stacked">
             <li><a ng-href="#/main" ng-click="toggleLeft()"><i class="fa fa-home" aria-hidden="true"></i> Início</a></li>
-            <li><a ng-href="#/conquistas" ng-click="toggleLeft()"><i class="fa fa-trophy" aria-hidden="true"></i> Conquistas</a></li>
+            <li><a ng-href="#/investimento" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investir</a></li>
+            <li><a ng-href="#/transacoes" ng-click="toggleLeft()"><i class="fa fa-exchange" aria-hidden="true"></i> Trsansações</a></li>
             <li><a ng-href="#/contatos" ng-click="toggleLeft()"><i class="fa fa-users" aria-hidden="true"></i> Contatos</a></li>
             <li><a ng-href="#/cartoes" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>
             <li><a ng-href="#/dinheiro" ng-click="toggleLeft()"><i class="fa fa-plus" aria-hidden="true"></i> Adicionar Dinheiro</a></li>
             <li><a ng-href="#/banco" ng-click="toggleLeft()"><i class="fa fa-university" aria-hidden="true"></i> Transferir para o Banco</a></li>
-            <li><a ng-href="#/investimento" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investimentos</a></li>
             <li><a ng-href="#/about" ng-click="toggleLeft()"><i class="fa fa-cog" aria-hidden="true"></i> Ajustes</a></li>
             <li><a ng-href="#/login" ng-click="toggleLeft()"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a></li>
           </ul>
@@ -70,6 +70,24 @@
           </div>
           <div style="width:61%; float:left;">
             <p style="padding-top:10px; color:white; font-size:15px;">
+              Pri$
+            </p>
+          </div>
+          <div style="width:17%; float:left;">
+            <button type="button" class="btn btn-default btn-sm" style="margin-top:7px;">
+              <span class="glyphicon glyphicon-bell"></span> (3)
+            </button>
+          </div>
+        </div>
+
+        <div ng-if="$route.current.loadedTemplateUrl == 'views/transacoes.html'">
+          <div style="width:20%; float:left;">
+            <md-button ng-click="toggleLeft()" class="md-icon-button" aria-label="Menu">
+              <md-icon md-svg-icon="images/menu.svg"></md-icon>
+            </md-button>
+          </div>
+          <div style="width:61%; float:left;">
+            <p style="padding-top:10px; color:white; font-size:15px;">
               <span style="font-size:10px;">Dinheiro no Pri$</span> - R$ 0,00
             </p>
           </div>
@@ -80,7 +98,8 @@
           </div>
         </div>
 
-        <div ng-hide="$route.current.loadedTemplateUrl == 'views/main.html'">
+        <div ng-hide="$route.current.loadedTemplateUrl == 'views/main.html'
+             || $route.current.loadedTemplateUrl == 'views/transacoes.html'">
           <div style="width:20%; float:left;">
             <md-button ng-click="voltar()" class="md-icon-button" aria-label="Menu">
               <md-icon><i class="fa fa-arrow-left" aria-hidden="true"></i></md-icon>
@@ -220,6 +239,8 @@
   <script src="../bower_components/angular-touch/angular-touch.js"></script>
   <script src="../bower_components/angular-material/angular-material.js"></script>
   <script src="../bower_components/angular-material/angular-material-mocks.js"></script>
+  <script src="../bower_components/chart.js/dist/Chart.min.js"></script>
+  <script src="../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
   <script src="../bower_components/jquery/dist/jquery.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <!-- endbower -->
@@ -242,6 +263,7 @@
   <script src="scripts/controllers/receber.js"></script>
   <script src="scripts/controllers/pagarone.js"></script>
   <script src="scripts/controllers/receberone.js"></script>
+  <script src="scripts/controllers/transacoes.js"></script>
   <!-- endbuild -->
 </body>
 </html>
