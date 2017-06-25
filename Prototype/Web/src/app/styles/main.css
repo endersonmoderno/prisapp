@@ -88,9 +88,14 @@
   overflow-y: scroll;
 }
 
+.resumografico {
+  margin: 0 auto;
+  width: 200px;
+}
+
 .reumovalor {
   float: left;
-  margin: -145px auto 0 80px;
+  margin: -120px auto 0 55px;
   text-align: center;
   width: 90px;
 }
