@@ -12,22 +12,25 @@
           </div>
           <div style="clear:both;"></div>
           <hr />
-          <p>Total Investido: <strong>R$ 1.000,00</strong></p>
-          <p>Rendimento (12%): <strong>R$ 120,00</strong></p>
+          <p><i class="fa fa-money" aria-hidden="true"></i> Total Investido: <strong>R$ 1.000,00</strong></p>
+          <p><i class="fa fa-line-chart" aria-hidden="true"></i> Rendimento (12%): <strong>R$ 120,00</strong></p>
           <hr />
-          <md-button ng-href="#/investimento" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Investir</md-button>
+          <md-button ng-href="#/investimento" class="md-raised md-primary btentrar" style="background-color: darkgreen;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Investir</md-button>
         </md-content>
       </md-tab>
       <md-tab label="Histórico">
         <md-content class="md-padding">
-          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'-' }">
-            <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
-                 ng-if="item.foto" />
-            <div class="md-list-item-text">
-              <p style="font-size:10px;"> {{ item.login }} </p>
-              <h3 style="color:darkred;" ng-if="item.tipo == '-'">{{item.tipo}} {{ item.valor }} </h3>
-              <h3 style="color:darkgreen;" ng-if="item.tipo == '+'">{{item.tipo}} {{ item.valor }} </h3>
-              <p> {{ item.data }} </p>
+          <md-list-item class="md-2-line" ng-repeat="item in items">
+            <div>
+              <h3><i class="fa fa-calendar" aria-hidden="true"></i> {{ item.data }} </h3>
+              <p><i class="fa fa-money" aria-hidden="true"></i> Investimento: <strong>{{ item.investimento }}</strong></p>
+              <p><i class="fa fa-line-chart" aria-hidden="true"></i> Rendimento: <strong style="font-size:18px;">{{ item.rendimento }}</strong> </p>
+              <p><i class="fa fa-clock-o" aria-hidden="true"></i> Período selecionado: <strong>{{ item.periodo }}</strong> </p>
+              <p><i class="fa fa-{{item.icon}}" aria-hidden="true"></i> {{ item.meses }} </p>
+              <br />
+              <md-button ng-href="#/banco" ng-show="item.cancel" class="md-raised md-warn btentrar"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</md-button>
+              <md-button ng-href="#/banco" ng-show="item.saque" class="md-raised md-primary btentrar" style="background-color: darkgreen;"><i class="fa fa-gift" aria-hidden="true"></i> Sacar</md-button>
+              <hr />
             </div>
           </md-list-item>
         </md-content>
