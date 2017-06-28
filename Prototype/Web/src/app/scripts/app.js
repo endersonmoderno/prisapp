@@ -105,6 +105,11 @@ angular
               controller: 'TransacoesCtrl',
               controllerAs: 'transacoes'
             })
+            .when('/investimento2', {
+              templateUrl: 'views/investimento2.html',
+              controller: 'Investimento2Ctrl',
+              controllerAs: 'investimento2'
+            })
             .otherwise({
                 redirectTo: '/'
             });

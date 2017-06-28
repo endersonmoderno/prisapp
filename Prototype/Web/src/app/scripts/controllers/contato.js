@@ -142,10 +142,12 @@ angular.module('prisappApp')
         });
 
         $scope.fnpagar = function (login) {
-            $location.url('/pagarone/' + login);
+            //$location.url('/pagarone/' + login);
+            $location.url('/pagarone');
         };
 
         $scope.fnreceber = function (login) {
-            $location.url('/receberone/' + login);
+            //$location.url('/receberone/' + login);
+            $location.url('/receberone');
         };
     });

@@ -40,6 +40,7 @@
     <Compile Include="src\app\scripts\controllers\contatos.js" />
     <Compile Include="src\app\scripts\controllers\dinheiro.js" />
     <Compile Include="src\app\scripts\controllers\investimento.js" />
+    <Compile Include="src\app\scripts\controllers\investimento2.js" />
     <Compile Include="src\app\scripts\controllers\login.js" />
     <Compile Include="src\app\scripts\controllers\main.js" />
     <Compile Include="src\app\scripts\controllers\pagar.js" />
@@ -522,6 +523,7 @@
     <Content Include="src\app\views\contatos.html" />
     <Content Include="src\app\views\dinheiro.html" />
     <Content Include="src\app\views\investimento.html" />
+    <Content Include="src\app\views\investimento2.html" />
     <Content Include="src\app\views\login.html" />
     <Content Include="src\app\views\main.html" />
     <Content Include="src\app\views\pagar.html" />

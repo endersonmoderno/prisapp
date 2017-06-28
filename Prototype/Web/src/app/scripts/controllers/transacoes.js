@@ -63,4 +63,8 @@ angular.module('prisappApp')
         $location.url('/receber');
     };
 
+    $scope.verpessoa = function (login) {
+        $location.url('/contato/' + login);
+    };
+
   });

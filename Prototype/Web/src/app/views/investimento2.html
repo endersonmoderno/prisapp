@@ -1,0 +1,38 @@
+﻿<div class="col-md-12 text-center">
+  
+  <div>
+    <h3><i class="fa fa-calendar" aria-hidden="true"></i> {{ obj.data }} </h3>
+    <p><i class="fa fa-money" aria-hidden="true"></i> Investimento: <strong>{{ obj.investimento }}</strong></p>
+    <p><i class="fa fa-line-chart" aria-hidden="true"></i> Rendimento: <strong style="font-size:18px;">{{ obj.rendimento }}</strong> </p>
+    <p><i class="fa fa-clock-o" aria-hidden="true"></i> Período selecionado: <strong>{{ obj.periodo }}</strong> </p>
+  </div>
+
+  <hr />
+
+  <h4><i class="fa fa-usd" aria-hidden="true"></i> Forma de Pagamento:</h4>
+
+  <md-content style="padding:10px;">
+    <md-radio-group class="md-primary" ng-model="itemselecionado">
+      <md-radio-button ng-repeat="item in items"
+                       ng-value="item.tipo"
+                       ng-class="md-align-top-right">
+        <p><i class="fa fa-{{item.tipo}}" aria-hidden="true"></i> {{ item.nome }} </p>
+      </md-radio-button>
+    </md-radio-group>
+  </md-content>
+
+  <md-button ng-href="#/main" class="md-raised md-primary btnormal" style="background-color: darkgreen;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Finalizar</md-button>
+</div>
+<style type="text/css">
+  .md-errors-spacer {
+    display: none;
+  }
+
+  .txtvalor {
+    height: 40px !important;
+    font-size: 40px !important;
+    border-color: darkseagreen !important;
+    color: darkseagreen !important;
+    text-align: right;
+  }
+</style>

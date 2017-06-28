@@ -1,1 +1,43 @@
-<p>This is the investimento view.</p>
+﻿<div class="col-md-12 text-center">
+  <h4><i class="fa fa-money" aria-hidden="true"></i> Informe o Valor:</h4>
+  <md-input-container ng-cloak md-no-float class="md-block" style="width:95%;">
+    <md-icon class="name">R<i class="fa fa-usd" aria-hidden="true"></i></md-icon>
+    <input ng-model="obj.valor" type="number" step="0.01" placeholder="0,00" ng-required="true" class="txtvalor">
+  </md-input-container>
+
+  <h4><i class="fa fa-clock-o" aria-hidden="true"></i> Período Sugerido:</h4>
+  <md-slider-container>
+    <md-icon class="name"><i class="fa fa-calendar" aria-hidden="true"></i></md-icon>
+    <md-slider ng-model="obj.periodo" aria-label="meses" step="1" min="1" max="12"></md-slider>
+    <md-input-container>
+      <input flex type="text" ng-model="obj.periodo" aria-label="green" aria-controls="green-slider" readonly style="text-align:center;">
+      <p style="font-size:12px;">(meses)</p>
+    </md-input-container>
+  </md-slider-container>
+  
+  <hr />
+
+  <h4><i class="fa fa-line-chart" aria-hidden="true"></i> Rendimento Estimado: </h4>
+  <p>R<i class="fa fa-usd" aria-hidden="true"></i> <strong>{{((obj.valor * obj.periodo) * 0.1) | number : 2}}</strong></p>  
+
+  <hr />
+
+  <h3>R<i class="fa fa-usd" aria-hidden="true"></i> Total: {{obj.valor + ((obj.valor * obj.periodo) * 0.1) | number : 2}} </h3>
+
+  <hr />
+
+  <md-button ng-href="#/investimento2" class="md-raised md-primary btnormal" style="background-color: darkgreen;"><i class="fa fa-arrow-right" aria-hidden="true"></i> Continuar</md-button>
+</div>
+<style type="text/css">
+  .md-errors-spacer {
+    display: none;
+  }
+
+  .txtvalor {
+    height: 40px !important;
+    font-size: 40px !important;
+    border-color: darkseagreen !important;
+    color: darkseagreen !important;
+    text-align: right;
+  }
+</style>

@@ -3,7 +3,7 @@
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Todos">
         <md-content class="md-padding">
-          <md-list-item class="md-2-line" ng-repeat="item in items">
+          <md-list-item class="md-2-line" ng-repeat="item in items" ng-click="verpessoa(item.login)">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
                  ng-if="item.foto" />
             <div class="md-list-item-text">
@@ -17,7 +17,7 @@
       </md-tab>
       <md-tab label="Recebidos">
         <md-content class="md-padding">
-          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'-' }">
+          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'-' }" ng-click="verpessoa(item.login)">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
                  ng-if="item.foto" />
             <div class="md-list-item-text">
@@ -31,7 +31,7 @@
       </md-tab>
       <md-tab label="Pagos">
         <md-content class="md-padding">
-          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'+' }">
+          <md-list-item class="md-2-line" ng-repeat="item in items | filter:{ tipo: '!'+'+' }" ng-click="verpessoa(item.login)">
             <img ng-src="{{item.foto}}?25" class="md-avatar" alt="{{item.foto}}"
                  ng-if="item.foto" />
             <div class="md-list-item-text">
