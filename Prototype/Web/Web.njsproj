@@ -35,6 +35,7 @@
     <Compile Include="src\app\scripts\controllers\banco.js" />
     <Compile Include="src\app\scripts\controllers\cartaonovo.js" />
     <Compile Include="src\app\scripts\controllers\cartoes.js" />
+    <Compile Include="src\app\scripts\controllers\comoinvestir.js" />
     <Compile Include="src\app\scripts\controllers\conquistas.js" />
     <Compile Include="src\app\scripts\controllers\contato.js" />
     <Compile Include="src\app\scripts\controllers\contatos.js" />
@@ -54,6 +55,11 @@
     <Compile Include="src\bower_components\angular-aria\angular-aria.js" />
     <Compile Include="src\bower_components\angular-aria\angular-aria.min.js" />
     <Compile Include="src\bower_components\angular-aria\index.js" />
+    <Compile Include="src\bower_components\angular-bootstrap\index.js" />
+    <Compile Include="src\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Compile Include="src\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    <Compile Include="src\bower_components\angular-bootstrap\ui-bootstrap.js" />
+    <Compile Include="src\bower_components\angular-bootstrap\ui-bootstrap.min.js" />
     <Compile Include="src\bower_components\angular-chart.js\angular-chart.js" />
     <Compile Include="src\bower_components\angular-chart.js\dist\angular-chart.js" />
     <Compile Include="src\bower_components\angular-chart.js\dist\angular-chart.min.js" />
@@ -518,6 +524,7 @@
     <Content Include="src\app\views\banco.html" />
     <Content Include="src\app\views\cartaonovo.html" />
     <Content Include="src\app\views\cartoes.html" />
+    <Content Include="src\app\views\comoinvestir.html" />
     <Content Include="src\app\views\conquistas.html" />
     <Content Include="src\app\views\contato.html" />
     <Content Include="src\app\views\contatos.html" />
@@ -543,6 +550,13 @@
     <Content Include="src\bower_components\angular-aria\LICENSE.md" />
     <Content Include="src\bower_components\angular-aria\package.json" />
     <Content Include="src\bower_components\angular-aria\README.md" />
+    <Content Include="src\bower_components\angular-bootstrap\.bower.json" />
+    <Content Include="src\bower_components\angular-bootstrap\.gitignore" />
+    <Content Include="src\bower_components\angular-bootstrap\.npmignore" />
+    <Content Include="src\bower_components\angular-bootstrap\bower.json" />
+    <Content Include="src\bower_components\angular-bootstrap\package.json" />
+    <Content Include="src\bower_components\angular-bootstrap\README.md" />
+    <Content Include="src\bower_components\angular-bootstrap\ui-bootstrap-csp.css" />
     <Content Include="src\bower_components\angular-chart.js\.bower.json" />
     <Content Include="src\bower_components\angular-chart.js\bower.json" />
     <Content Include="src\bower_components\angular-chart.js\CONTRIBUTING.md" />
@@ -1237,6 +1251,7 @@
     <Folder Include="src\bower_components\" />
     <Folder Include="src\bower_components\angular-animate\" />
     <Folder Include="src\bower_components\angular-aria\" />
+    <Folder Include="src\bower_components\angular-bootstrap\" />
     <Folder Include="src\bower_components\angular-chart.js\" />
     <Folder Include="src\bower_components\angular-chart.js\dist\" />
     <Folder Include="src\bower_components\angular-cookies\" />

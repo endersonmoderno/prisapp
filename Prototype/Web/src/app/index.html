@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css" />
   <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -56,7 +57,8 @@
       </md-sidenav>
     </section>
     
-    <div ng-cloak ng-hide="$route.current.loadedTemplateUrl == 'views/login.html'" 
+    <div ng-cloak ng-hide="$route.current.loadedTemplateUrl == 'views/login.html'
+         || $route.current.loadedTemplateUrl == 'views/comoinvestir.html'" 
          class="navbar navbar-default" 
          role="navigation" 
          style="background-image: linear-gradient(to bottom, green 90%, #f8f8f8 100%);">
@@ -240,6 +242,7 @@
   <script src="../bower_components/angular-touch/angular-touch.js"></script>
   <script src="../bower_components/angular-material/angular-material.js"></script>
   <script src="../bower_components/angular-material/angular-material-mocks.js"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
   <script src="../bower_components/chart.js/dist/Chart.min.js"></script>
   <script src="../bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
   <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -266,6 +269,7 @@
   <script src="scripts/controllers/receberone.js"></script>
   <script src="scripts/controllers/transacoes.js"></script>
   <script src="scripts/controllers/investimento2.js"></script>
+  <script src="scripts/controllers/comoinvestir.js"></script>
   <!-- endbuild -->
 </body>
 </html>

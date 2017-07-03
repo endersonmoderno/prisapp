@@ -18,7 +18,8 @@ angular
         'ngRoute',
         'ngSanitize',
         'ngMaterial',
-        'chart.js'
+        'chart.js',
+        'ui.bootstrap'
     ])
     .config(function ($routeProvider, $locationProvider) {
 
@@ -109,6 +110,11 @@ angular
               templateUrl: 'views/investimento2.html',
               controller: 'Investimento2Ctrl',
               controllerAs: 'investimento2'
+            })
+            .when('/comoinvestir', {
+              templateUrl: 'views/comoinvestir.html',
+              controller: 'ComoinvestirCtrl',
+              controllerAs: 'comoinvestir'
             })
             .otherwise({
                 redirectTo: '/'
