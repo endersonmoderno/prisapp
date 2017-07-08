@@ -501,6 +501,19 @@
     <Content Include="src\app\404.html" />
     <Content Include="src\app\favicon.ico" />
     <Content Include="src\app\images\alexandre.png" />
+    <Content Include="src\app\images\comeceinvestir\1.jpg" />
+    <Content Include="src\app\images\comeceinvestir\10.jpg" />
+    <Content Include="src\app\images\comeceinvestir\11.jpg" />
+    <Content Include="src\app\images\comeceinvestir\12.jpg" />
+    <Content Include="src\app\images\comeceinvestir\13.jpg" />
+    <Content Include="src\app\images\comeceinvestir\2.jpg" />
+    <Content Include="src\app\images\comeceinvestir\3.jpg" />
+    <Content Include="src\app\images\comeceinvestir\4.png" />
+    <Content Include="src\app\images\comeceinvestir\5.png" />
+    <Content Include="src\app\images\comeceinvestir\6.png" />
+    <Content Include="src\app\images\comeceinvestir\7.jpg" />
+    <Content Include="src\app\images\comeceinvestir\8.jpg" />
+    <Content Include="src\app\images\comeceinvestir\9.jpg" />
     <Content Include="src\app\images\enderson.png" />
     <Content Include="src\app\images\mariaalice.png" />
     <Content Include="src\app\images\medalhas1.jpg" />
@@ -1244,6 +1257,7 @@
     <Folder Include="src\" />
     <Folder Include="src\app\" />
     <Folder Include="src\app\images\" />
+    <Folder Include="src\app\images\comeceinvestir\" />
     <Folder Include="src\app\scripts\" />
     <Folder Include="src\app\scripts\controllers\" />
     <Folder Include="src\app\styles\" />
