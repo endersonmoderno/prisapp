@@ -33,6 +33,7 @@
     <Compile Include="src\app\scripts\app.js" />
     <Compile Include="src\app\scripts\controllers\about.js" />
     <Compile Include="src\app\scripts\controllers\banco.js" />
+    <Compile Include="src\app\scripts\controllers\cadastrar.js" />
     <Compile Include="src\app\scripts\controllers\cartaonovo.js" />
     <Compile Include="src\app\scripts\controllers\cartoes.js" />
     <Compile Include="src\app\scripts\controllers\comoinvestir.js" />
@@ -535,6 +536,7 @@
     </Content>
     <Content Include="src\app\views\about.html" />
     <Content Include="src\app\views\banco.html" />
+    <Content Include="src\app\views\cadastrar.html" />
     <Content Include="src\app\views\cartaonovo.html" />
     <Content Include="src\app\views\cartoes.html" />
     <Content Include="src\app\views\comoinvestir.html" />

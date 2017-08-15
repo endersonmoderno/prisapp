@@ -1,0 +1,548 @@
+﻿
+<main ng-cloak>
+  <div class="container">
+    <div class="row">
+      <div style="margin-left:10px; text-align:center;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p>&nbsp;</p>
+      </div>
+    </div>
+    <form name="myform" class="form-validation" role="form" novalidate>
+      <div class="animate-switch-container" ng-switch on="stage" ng-class="{forward: direction, backward:!direction}">
+        <div class="animate-switch" ng-switch-default>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p>Bem vindo ao <strong>Pri$</strong>, este é um protótipo de aplicativo para investimentos.</p>
+              <p>Com ele você será capaz de fazer Investimentos em <strong>Criptomoedas</strong> de Maneira Fácil e Segura.</p>
+              <p>Pois você não precisa entender do assunto, nós faremos isto por você.</p>
+              <button type="button" class="btn btn-primary" ng-click="next()">Vamos começar</button>
+              <hr />
+              <p>Esta versão é apenas para simulação.</p>
+            </div>
+          </div>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage1">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-fname">Nome:</label>
+                <input type="text" class="form-control" id="tb-fname" name="nome" ng-maxlength="250" ng-model="obj.nome" required ng-class="{'input-error': validar && myform.nome.$error.required}">
+                <span ng-show="myform.nome.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-lname">Sobrenome:</label>
+                <input type="text" class="form-control" id="tb-lname" name="sobrenome" ng-maxlength="250" ng-model="obj.sobrenome" ng-class="{'input-error': validar && myform.sobrenome.$error.required}" required>
+                <span ng-show="myform.sobrenome.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+          <button type="button" class="btn btn-primary" ng-click="next()">Próximo Passo</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage2">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p>Olá <strong>{{obj.nome}}</strong>, conte-nos mais sobre você, para podermos iniciar a simulação.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-lname">Data de nascimento:</label>
+                <div class="">
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <input type="number" class="form-control" style="width:65px;" id="tb-dtnascdia" name="dtnascdia" ng-maxlength="2" ng-model="obj.dtnascdia" ng-class="{'input-error': validar && myform.dtnascdia.$error.required}" required placeholder="DD">
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <input type="number" class="form-control" style="width:65px;" id="tb-dtnascmes" name="dtnascmes" ng-maxlength="2" ng-model="obj.dtnascmes" ng-class="{'input-error': validar && myform.dtnascmes.$error.required}" required placeholder="MM">
+                  </div>
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <input type="number" class="form-control" style="width:80px;" id="tb-dtnascano" name="dtnascano" ng-maxlength="4" ng-model="obj.dtnascano" ng-class="{'input-error': validar && myform.dtnascano.$error.required}" required placeholder="AAAA">
+                  </div>
+                </div>
+                <div class="row">
+                  <span ng-show="myform.dtnascdia.$error.number ||
+                      myform.dtnascdia.$error.maxlength ||
+                      myform.dtnascmes.$error.number ||
+                      myform.dtnascmes.$error.maxlength ||
+                      myform.dtnascano.$error.number ||
+                      myform.dtnascano.$error.maxlength">
+                    Data inválida.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-lname">Sexo:</label>
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="sexo('M')">Masculino</button>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="sexo('F')">Feminino</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage3">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p><strong>{{obj.nome}}</strong>, algum dia você já investiu seu dinheiro?</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="jainvestiu('N')">Não</button>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="jainvestiu('S')">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p>Por exemplo: em Poupança, Tesouro Direto, Ações, Imóveis ou qualquer outro.</p>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage4">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p>Quais investimentos?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <md-switch class="md-primary" name="special" ng-model="obj.poupanca">
+                  Poupança
+                </md-switch>
+                <md-switch class="md-primary" name="special" ng-model="obj.tesouro">
+                  Tesouro Direto
+                </md-switch>
+                <md-switch class="md-primary" name="special" ng-model="obj.acoes">
+                  Ações
+                </md-switch>
+                <md-switch class="md-primary" name="special" ng-model="obj.imoveis">
+                  Imóveis
+                </md-switch>
+                <md-switch class="md-primary" name="special" ng-model="obj.outros">
+                  Outros
+                </md-switch>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+          <button type="button" class="btn btn-primary" ng-click="next()">Próximo Passo</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage5">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p><strong>{{obj.nome}}</strong>, qual seu grau de satisfação nos investimentos atuais?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <button type="button" class="btn btn-danger" ng-click="grausatisfeito(1)">Insatisfeito</button>
+                <hr />
+                <button type="button" class="btn btn-primary" ng-click="grausatisfeito(2)">Satisfeito</button>
+                <hr />
+                <button type="button" class="btn btn-success" ng-click="grausatisfeito(3)">Muito Satisfeito</button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>         
+        </div>
+        <div class="animate-switch" ng-switch-when="stage6">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p><strong>{{obj.nome}}</strong>, você já investiu em criptomoedas?</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="jainvestiucripto('N')">Não</button>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="jainvestiucripto('S')">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage7">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p><strong>{{obj.nome}}</strong>, você nunca investiu em criptomoedas pois:</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <button type="button" class="btn btn-danger" ng-click="nuncapois(1)">não entende do assunto</button>
+                <hr />
+                <button type="button" class="btn btn-primary" ng-click="nuncapois(2)">não confia em criptomoedas</button>
+                <hr />
+                <button type="button" class="btn btn-success" ng-click="nuncapois(3)">ambos, não entende e não confia</button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button> 
+        </div>
+        <div class="animate-switch" ng-switch-when="stage8">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p>Qual seu nível de confiança atual em investir dinheiro em criptomoedas?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <button type="button" class="btn btn-danger" ng-click="confianca(1)">Não confio</button>
+                <hr />
+                <button type="button" class="btn btn-primary" ng-click="confianca(2)">Confio</button>
+                <hr />
+                <button type="button" class="btn btn-success" ng-click="confianca(3)">Confio Muito</button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage9">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p>Gostaria de poder investir em criptomoedas de maneira fácil?</p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="maneirafacil('N')">Não</button>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" class="btn btn-primary" ng-click="maneirafacil('S')">Sim</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage10">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p ng-show="obj.jainvestiucripto == 'N'"><strong>{{obj.nome}}</strong>, se você investisse em criptomoedas, quantos Reais você investiria?</p>
+              <p ng-show="obj.jainvestiucripto == 'S'"><strong>{{obj.nome}}</strong>, quantos Reais você poderia investir novamente em criptomoedas?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-fname">Valor em Reais:</label>
+                <input type="number" class="form-control" id="tb-valor" name="valor" ng-maxlength="20" ng-model="obj.valor" required ng-class="{'input-error': validar && myform.valor.$error.required}">
+                <span ng-show="myform.valor.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+          <button type="button" class="btn btn-primary" ng-click="next()">Próximo Passo</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage11">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <p><strong>{{obj.nome}}</strong>, estamos acabando a pesquisa, falta pouco.</p>
+              <p>Onde você mora?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-fname">Estado:</label>
+                <input type="text" class="form-control" id="tb-estado" name="estado" ng-maxlength="100" ng-model="obj.estado" ng-class="{'input-error': validar && myform.estado.$error.required}" required>
+                <span ng-show="myform.estado.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-lname">Cidade:</label>
+                <input type="text" class="form-control" id="tb-cidade" name="cidade" ng-maxlength="200" ng-model="obj.cidade" ng-class="{'input-error': validar && myform.cidade.$error.required}" required>
+                <span ng-show="myform.cidade.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+          <button type="button" class="btn btn-primary" ng-click="next()">Próximo Passo</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage12">
+          <strong>{{obj.nome}}</strong>, informe um e-mail válido, você irá receber suas simulações nele.
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-email">Email:</label>
+                <input type="email" class="form-control" id="tb-email" name="email" ng-maxlength="100" ng-model="obj.email" ng-class="{'input-error': validar && myform.email.$error.required}" ng-model-options="{ updateOn: 'blur' }" required>
+                <span ng-show="myform.email.$error.email">
+                  E-mail incorreto.
+                </span>
+                <span ng-show="myform.email.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <p>Este e-mail também será usado para você fazer o seu login.</p>
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+          <button type="button" class="btn btn-primary" ng-click="next()">Próximo Passo</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="stage13">
+          <strong>{{obj.nome}}</strong>, este é o último passo, por favor, defina uma senha de acesso.
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-lname">Senha:</label>
+                <input type="password" class="form-control" id="tb-senha" name="senha" ng-maxlength="20" ng-model="obj.senha" ng-class="{'input-error': validar && myform.senha.$error.required}" required>
+                <span ng-show="myform.senha.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <label for="tb-lname">Repetir Senha:</label>
+                <input type="password" class="form-control" id="tb-rsenha" name="rsenha" ng-maxlength="20" ng-model="rsenha" ng-class="{'input-error': validar && myform.rsenha.$error.required}" required>
+                <span ng-show="myform.rsenha.$error.maxlength">
+                  Tamanho máximo de caracteres alcançado.
+                </span>
+                <span ng-show="rsenha != obj.senha">
+                  As senhas devem ser iguais e estão diferentes.
+                </span>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
+          <button type="button" class="btn btn-warning" ng-click="submitForm()">Terminar</button>
+        </div>
+        <div class="animate-switch" ng-switch-when="success">
+          <div class="success-wrap">
+            <h2 class="confirmation-text">Obrigado</h2>
+            <p>Cadastro realizado com sucesso.</p>
+          </div>
+        </div>
+        <div class="animate-switch" ng-switch-when="error">
+          <div class="error-wrap">
+            <h2 class="confirmation-text">Erro</h2>
+            <p>Ocorreu uma falha no cadastro.<br>Por favor, tente mais tarde.</p>
+            <md-button ng-href="#/login" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Vamos Começar!</md-button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!--
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <button type="button" class="btn btn-sm btn-info" ng-click="toggleJSONView = !toggleJSONView">Toggle Object</button>
+        <div>&nbsp;</div>
+        <pre ng-show="toggleJSONView"> {{ obj | json }}</pre>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">&nbsp;</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <button type="button" class="btn btn-sm btn-info" ng-click="toggleFormErrorsView = !toggleFormErrorsView">Toggle Form Errors</button>
+        <div>&nbsp;</div>
+        <ul ng-show="toggleFormErrorsView">
+          <li ng-show="myform.$invalid">Form Invalid</li>
+          <li ng-show="myform.$valid">Form Valid</li>
+          <li ng-repeat="(key, errors) in myform.$error track by $index">
+            <strong>{{ key }}</strong> errors
+            <ul>
+              <li ng-repeat="e in errors">{{ e.$name }} has an error: <strong>{{ key }}</strong>.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    -->
+  </div>
+</main>
+<style type="text/css">
+  /*------>>> Animations <<<-----*/
+  .fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease-in;
+    -moz-transition: opacity 0.25s ease-in;
+    -o-transition: opacity 0.25s ease-in;
+    /*-ms-transition: opacity 0.25s ease-in;*/
+    transition: opacity 0.25s ease-in;
+    transition-delay: 0.25s;
+  }
+
+    .fade.in {
+      opacity: 1;
+    }
+
+  .animate-switch-container {
+    background-size: 50px 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 6px 6px 15px gray;
+    height: 350px;
+    margin-left: 10px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    width: 90%;
+  }
+
+  .animate-switch {
+    padding: 10px;
+    width: 100%;
+  }
+
+    .animate-switch.ng-animate {
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      position: absolute;
+    }
+    /* hide leaving slide  */
+    /* show */
+    .animate-switch.ng-leave {
+      left: 0;
+    }
+  /* hide */
+  .forward .animate-switch.ng-leave.ng-leave-active {
+    left: -100%;
+  }
+
+  .backward .animate-switch.ng-leave.ng-leave-active {
+    left: 100%;
+  }
+  /* show entering slide  */
+  /* hide */
+  .forward .animate-switch.ng-enter {
+    left: 100%;
+  }
+
+  .backward .animate-switch.ng-enter {
+    left: -100%;
+  }
+  /* show */
+  .animate-switch.ng-enter.ng-enter-active {
+    left: 0;
+  }
+
+
+  /*-----------------------------------*/
+  /*------>>> Validation <<<-----------*/
+  /*-----------------------------------*/
+
+  .form-validation input.ng-invalid-maxlength {
+    border: 2px solid #D9272D;
+  }
+
+
+  .length-error {
+    color: #D9272D;
+    display: block;
+    font-size: 12px;
+    opacity: .8;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    line-height: 18px;
+    padding: 10px 10px 5px 10px;
+    margin: -25px 0 20px 0;
+    background-color: #E3E3E3;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .input-error {
+    border: 2px solid #D9272D;
+  }
+
+  /*-----------------------------------*/
+  /*------->>> FORM STYLES <<<---------*/
+  /*-----------------------------------*/
+
+  .note {
+    display: block;
+    font-size: 12px;
+    opacity: .8;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    line-height: 18px;
+  }
+
+  .note-input {
+    padding: 10px 10px 5px 10px;
+    margin: -25px 0 20px 0;
+    background-color: #E3E3E3;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .note-input-error, .required-error-banner {
+    background-color: rgba(217, 39, 45, 0.5);
+  }
+
+  /*-----------------------------------*/
+  /*----------->>> HELPERS <<<-------------*/
+  /*-----------------------------------*/
+
+  /*
+   Allow angular.js to be loaded in body, hiding cloaked elements until
+   templates compile.  The !important is important given that there may be
+   other selectors that are more specific or come later and might alter display.
+  */
+  [ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+  }
+</style>

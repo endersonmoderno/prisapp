@@ -21,7 +21,7 @@ angular
         'chart.js',
         'ui.bootstrap'
     ])
-    .config(function ($routeProvider, $locationProvider) {
+    .config(function ($routeProvider, $locationProvider, $mdDateLocaleProvider) {
 
         $locationProvider.hashPrefix('');
 
@@ -116,9 +116,19 @@ angular
               controller: 'ComoinvestirCtrl',
               controllerAs: 'comoinvestir'
             })
+            .when('/cadastrar', {
+              templateUrl: 'views/cadastrar.html',
+              controller: 'CadastrarCtrl',
+              controllerAs: 'cadastrar'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+
+        $mdDateLocaleProvider.formatDate = function (date) {
+            return moment(date).format('DD/MM/YYYY');
+        };
+
     })
     .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window, $location) {
 
