@@ -34,6 +34,7 @@
     <Compile Include="src\app\scripts\controllers\about.js" />
     <Compile Include="src\app\scripts\controllers\banco.js" />
     <Compile Include="src\app\scripts\controllers\cadastrar.js" />
+    <Compile Include="src\app\scripts\controllers\cadastrarmail.js" />
     <Compile Include="src\app\scripts\controllers\cartaonovo.js" />
     <Compile Include="src\app\scripts\controllers\cartoes.js" />
     <Compile Include="src\app\scripts\controllers\comoinvestir.js" />
@@ -490,6 +491,9 @@
     <Compile Include="src\bower_components\jquery\src\var\support.js" />
     <Compile Include="src\bower_components\jquery\src\var\toString.js" />
     <Compile Include="src\bower_components\jquery\src\wrap.js" />
+    <Compile Include="src\bower_components\ngstorage\ngStorage.js" />
+    <Compile Include="src\bower_components\ngstorage\ngStorage.min.js" />
+    <Compile Include="src\bower_components\ngstorage\package.js" />
     <Content Include="images\fiap-logo.svg" />
     <Content Include="images\moto.png" />
     <Content Include="images\pig-pris.png" />
@@ -497,6 +501,13 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="src\bower_components\ngstorage\.bower.json" />
+    <Content Include="src\bower_components\ngstorage\.editorconfig" />
+    <Content Include="src\bower_components\ngstorage\.gitattributes" />
+    <Content Include="src\bower_components\ngstorage\.npmignore" />
+    <Content Include="src\bower_components\ngstorage\bower.json" />
+    <Content Include="src\bower_components\ngstorage\LICENSE" />
+    <Content Include="src\bower_components\ngstorage\README.md" />
     <None Include="PrisGrupoSVB.pubxml" />
     <Content Include="README.md" />
     <Content Include="src\app\404.html" />
@@ -537,6 +548,7 @@
     <Content Include="src\app\views\about.html" />
     <Content Include="src\app\views\banco.html" />
     <Content Include="src\app\views\cadastrar.html" />
+    <Content Include="src\app\views\cadastrarmail.html" />
     <Content Include="src\app\views\cartaonovo.html" />
     <Content Include="src\app\views\cartoes.html" />
     <Content Include="src\app\views\comoinvestir.html" />
@@ -1447,6 +1459,7 @@
     <Folder Include="src\bower_components\jquery\src\traversing\" />
     <Folder Include="src\bower_components\jquery\src\traversing\var\" />
     <Folder Include="src\bower_components\jquery\src\var\" />
+    <Folder Include="src\bower_components\ngstorage\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

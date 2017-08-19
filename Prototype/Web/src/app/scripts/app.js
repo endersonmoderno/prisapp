@@ -11,6 +11,7 @@
 angular
     .module('prisappApp', [
         'ngAnimate',
+        'ngStorage',
         'ngAria',
         'ngCookies',
         'ngMessages',
@@ -26,7 +27,7 @@ angular
         $locationProvider.hashPrefix('');
 
         $routeProvider
-            .when('/', {
+            .when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl',
                 controllerAs: 'login'
@@ -111,7 +112,7 @@ angular
               controller: 'Investimento2Ctrl',
               controllerAs: 'investimento2'
             })
-            .when('/comoinvestir', {
+            .when('/', {
               templateUrl: 'views/comoinvestir.html',
               controller: 'ComoinvestirCtrl',
               controllerAs: 'comoinvestir'
@@ -120,6 +121,11 @@ angular
               templateUrl: 'views/cadastrar.html',
               controller: 'CadastrarCtrl',
               controllerAs: 'cadastrar'
+            })
+            .when('/cadastrarmail', {
+              templateUrl: 'views/cadastrarmail.html',
+              controller: 'CadastrarmailCtrl',
+              controllerAs: 'cadastrarmail'
             })
             .otherwise({
                 redirectTo: '/'

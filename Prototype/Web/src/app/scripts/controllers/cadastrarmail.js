@@ -2,92 +2,31 @@
 
 /**
  * @ngdoc function
- * @name prisappApp.controller:CadastrarCtrl
+ * @name prisappApp.controller:CadastrarmailCtrl
  * @description
- * # CadastrarCtrl
+ * # CadastrarmailCtrl
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('CadastrarCtrl', function ($scope, $http, $filter, $localStorage) {
+    .controller('CadastrarmailCtrl', function ($scope, $http, $filter, $localStorage) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
 
-        $scope.usuario = $localStorage.usuario;
+        //TODO: verificar se irá continuar a limpar o local
+        $localStorage.$reset();
 
         $scope.obj = {
-            nome: $scope.usuario.nome,
-            dtnascdia: "",
-            dtnascmes: "",
-            dtnascano: "",
-            email: $scope.usuario.email,
-            sexo: "",
-            jainvestiu: "N",
-            poupanca: false,
-            tesouro: false,
-            acoes: false,
-            imoveis: false,
-            outros: false,
-            grausatisfeito: 0,
-            jainvestiucripto: "N",
-            nuncapois: 0,
-            confianca: 0,
-            maneirafacil: "N",
-            valor: "",
-            estado: "",
-            cidade: ""
+            nome: "",
+            sobrenome: "",
+            email: "",
+            senha: ""
         };
 
         $scope.stage = "";
         $scope.indice = 0;
-
-
-        $scope.sexo = function (tipo) {
-            $scope.obj.sexo = tipo;
-            $scope.next();
-        };
-
-        $scope.jainvestiu = function (tipo) {
-            $scope.obj.jainvestiu = tipo;
-
-            if (tipo === 'N') {
-                $scope.indice = $scope.indice + 2;
-            }
-
-            $scope.next();
-        };
-
-        $scope.grausatisfeito = function (tipo) {
-            $scope.obj.grausatisfeito = tipo;
-            $scope.next();
-        };
-
-        $scope.jainvestiucripto = function (tipo) {
-            $scope.obj.jainvestiucripto = tipo;
-
-            if (tipo === 'S') {
-                $scope.indice = $scope.indice + 2;
-            }
-
-            $scope.next();
-        };
-
-        $scope.nuncapois = function (tipo) {
-            $scope.obj.nuncapois = tipo;
-            $scope.next();
-        };
-
-        $scope.confianca = function (tipo) {
-            $scope.obj.confianca = tipo;
-            $scope.next();
-        };
-
-        $scope.maneirafacil = function (tipo) {
-            $scope.obj.maneirafacil = tipo;
-            $scope.next();
-        };
 
         // Navigation functions
         $scope.next = function () {
@@ -110,14 +49,6 @@ angular.module('prisappApp')
                 $scope.indice = $scope.indice - 1;
             }
 
-            if ($scope.stage === 'stage5' && $scope.obj.jainvestiu === 'N') {
-                $scope.indice = $scope.indice - 2;
-            }
-
-            if ($scope.stage === 'stage8' && $scope.obj.jainvestiucripto === 'S') {
-                $scope.indice = $scope.indice - 2;
-            }
-
             if ($scope.indice > 0) {
                 $scope.stage = 'stage' + $scope.indice;
             } else {
@@ -137,7 +68,7 @@ angular.module('prisappApp')
                 $scope.validar = false;
 
                 //TODO: verificar se gravação local ocorrerá aqui
-                $localStorage.pesquisa = $scope.obj;
+                $localStorage.usuario = $scope.obj;
 
                 $http({
                     method: 'POST',

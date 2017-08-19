@@ -1,5 +1,8 @@
 ﻿<div ng-cloak class="col-md-12 text-center">
-  <md-button ng-href="#/main" class="md-raised md-default lnkpular"><i class="fa fa-fast-forward" aria-hidden="true"></i> Pular</md-button>
+  <strong>Você está vendo nossa apresentação</strong>
+  <md-button ng-href="#/login" class="md-raised md-default lnkpular" style="color:white; background-color:red;">
+    <i class="fa fa-fast-forward" aria-hidden="true"></i> Pular apresentação - ir para o aplicativo
+  </md-button>
   <hr style="clear:both;" />
   <div ng-show="show == 1">
     <h2>Investimento Fácil</h2>
@@ -7,10 +10,10 @@
     <img src="images/comeceinvestir/1.jpg" />
   </div>
   <div ng-show="show == 2">
-    <h3>Criptomoedas</h3>
+    <h4>Criptomoedas</h4>
     <p>Atualmente existem diversas criptomoedas no mercado.</p>
-    <img src="images/comeceinvestir/2.jpg" />
-    <h4>Você não precisa entender do assunto, nós fazemos isso por você.</h4>
+    <img style="height:100px;" src="images/comeceinvestir/2.jpg" />
+    <br /><strong>Você não precisa entender do assunto, nós fazemos isso por você.</strong>
   </div>
   <div ng-show="show == 3">
     <h2>Sem risco</h2>
@@ -20,13 +23,13 @@
   </div>
   <div ng-show="show == 4">
     <h2>Qualquer valor</h2>
-    <p>Basta você selecionar o valor que quer investir.</p>
+    <p>Você poderá selecionar o valor que quiser investir.</p>
     <hr />
     <img src="images/comeceinvestir/4.png" />
   </div>
   <div ng-show="show == 5">
     <h2>No seu tempo</h2>
-    <p>Escolha a quantidade de meses para o tempo de investimento.</p>
+    <p>Bastará escolher a quantidade de meses para o tempo de investimento.</p>
     <hr />
     <img src="images/comeceinvestir/5.png" />
   </div>
@@ -42,19 +45,19 @@
     <img src="images/comeceinvestir/7.jpg" />
   </div>
   <div ng-show="show == 8">
-    <h2>Seu dinheiro</h2>
+    <h4>Seu dinheiro</h4>
     <p>E se você desistir antes do tempo, terá todo o seu dinheiro de volta.</p>
-    <img src="images/comeceinvestir/8.jpg" />
+    <img style="height:100px;" src="images/comeceinvestir/8.jpg" />
     <h4>Nós transferimos tudo direto para sua conta bancária sem tarifas.</h4>
   </div>
   <div ng-show="show == 9">
-    <h2>Mais dinheiro</h2>
+    <h4>Mais dinheiro</h4>
     <p>Sempre que você cumprir o tempo selecionado, você poderá ter mais dinheiro.</p>
-    <img src="images/comeceinvestir/9.jpg" />
+    <img style="height:100px;" src="images/comeceinvestir/9.jpg" />
   </div>
   <div ng-show="show == 10">
-    <h3>Fácil, Seguro, Sem Riscos e Sem Complicações.</h3>
-    <img src="images/comeceinvestir/10.jpg" />
+    <h4>Fácil, Seguro, Sem Riscos e Sem Complicações.</h4>
+    <img style="height:100px;" src="images/comeceinvestir/10.jpg" />
   </div>
   <div ng-show="show == 11">
     <h2>Rende muito mais</h2>
@@ -71,7 +74,7 @@
     <img src="images/comeceinvestir/13.jpg" />
   </div>
   <hr />
-  <md-button ng-href="#/investimento" ng-show="show == 13" class="md-raised md-primary lnkproximo"><i class="fa fa-arrow-right" aria-hidden="true"></i> Começar</md-button>
+  <md-button ng-href="#/login" ng-show="show == 13" class="md-raised md-primary lnkproximo"><i class="fa fa-arrow-right" aria-hidden="true"></i> Começar</md-button>
   <md-button ng-click="show = (show + 1)" ng-show="show < 13" class="md-raised md-primary lnkproximo"><i class="fa fa-arrow-right" aria-hidden="true"></i> Próximo</md-button>
   <hr />
   <div style="width:225px; margin: 0 auto;">
