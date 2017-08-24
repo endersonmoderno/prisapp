@@ -19,6 +19,7 @@ angular.module('prisappApp')
 
         $scope.obj = {
             nome: $scope.usuario.nome,
+			sobrenome: $scope.usuario.sobrenome,
             dtnascdia: "",
             dtnascmes: "",
             dtnascano: "",

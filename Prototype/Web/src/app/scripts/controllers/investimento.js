@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @ngdoc function
@@ -14,6 +14,8 @@ angular.module('prisappApp')
             'AngularJS',
             'Karma'
         ];
+
+        //TODO: consultar se já preencheu a pesquisa e redirecionar
 
         $scope.obj = {
             valor: 100.01,

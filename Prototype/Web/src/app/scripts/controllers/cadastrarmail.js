@@ -15,8 +15,10 @@ angular.module('prisappApp')
             'Karma'
         ];
 
-        //TODO: verificar se irá continuar a limpar o local
-        $localStorage.$reset();
+        $scope.msgerro = "";
+        $scope.ShowLoad = false;
+        $scope.stage = "";
+        $scope.indice = 0;
 
         $scope.obj = {
             nome: "",
@@ -24,9 +26,6 @@ angular.module('prisappApp')
             email: "",
             senha: ""
         };
-
-        $scope.stage = "";
-        $scope.indice = 0;
 
         // Navigation functions
         $scope.next = function () {
@@ -61,36 +60,64 @@ angular.module('prisappApp')
 
         // Post to desired exposed web service.
         $scope.submitForm = function () {
-            var wsUrl = "someURL";
 
-            // Check form validity and submit data using $http
             if ($scope.myform.$valid) {
                 $scope.validar = false;
 
-                //TODO: verificar se gravação local ocorrerá aqui
-                $localStorage.usuario = $scope.obj;
+                $scope.Loader(true);
 
-                $http({
-                    method: 'POST',
-                    url: wsUrl,
-                    data: JSON.stringify($scope.obj)
-                }).then(function successCallback(response) {
-                    if (response
-                        && response.data
-                        && response.data.status
-                        && response.data.status === 'success') {
+                var simhost = $localStorage.simhost;
+
+                //monta json de novo objeto
+                $scope.novoObj = {
+                    id: 0,
+                    nome: $scope.obj.nome + " " + $scope.obj.sobrenome,
+                    login: $scope.obj.email,
+                    token: "",
+                    senha: $scope.obj.senha,
+                    confirmarsenha: $scope.rsenha,
+                    data: "",
+                    selpermissoes: ["9"],
+                    permissoes: [{ "id": "9", "codigo": "conteudo1", "modulo": "com_conteudo", "nome": "", "descricao": "", "data": "" }]
+                };
+
+                var service = $http.post(simhost + "mod_usuario/api.php/usuario/novo", $scope.novoObj);
+                service.then(function onSuccess(response) {
+
+                    //obter dados de retorno da api
+                    var data = response.data;
+
+                    if (data.retorno.status === "ok") {
+
+                        //TODO: verificar se gravação local ocorrerá aqui
+                        $localStorage.usuario = $scope.obj;
+
+                        //recarrega o token em dados locais
+                        $localStorage.simadmintoken = data.retorno.dados.token;
+
+                        //redireciona
                         $scope.stage = "success";
                     } else {
-                        if (response
-                            && response.data
-                            && response.data.status
-                            && response.data.status === 'error') {
-                            $scope.stage = "error";
-                        }
+                        $scope.stage = "error";
+                        //retonra exceção programada
+                        $scope.msgerro = data.retorno.dados.erro;
                     }
-                }, function errorCallback(response) {
+                }).catch(function onError(response) {
+
+                    //obter dados de retorno da api
+                    var data = response.data;
+
+                    //se ocorrer erro, exibe mensagem
+                    if (data !== undefined && data !== "" && data.retorno !== undefined) {
+                        $scope.msgerro = "Serviço falhou: " + data.retorno.dados.erro;
+                    } else {
+                        $scope.msgerro = "Serviço falhou tente novamente.";
+                    }
+
                     $scope.stage = "error";
-                    console.log(response);
+
+                }).finally(function () {
+                    $scope.Loader(false);                
                 });
             }
         };
@@ -105,5 +132,11 @@ angular.module('prisappApp')
             //$scope.toggleFormErrorsView = false;
         };
 
+        //manipula o load da página
+        $scope.Loader = function (isCarregar, msg) {
+            if (msg === undefined) { msg = "Aguarde, carregando..."; }
+            $scope.ShowLoad = isCarregar;
+            $scope.MsgDivLoad = msg;
+        };
 
     });

@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @ngdoc function
@@ -15,6 +15,51 @@ angular.module('prisappApp')
             'Karma'
         ];
 
+        $scope.possui = false;
+
+        $scope.moedas = [
+            {
+                id: 1,
+                nome: "Bitcoin (BTC)",
+                imagem: "https://www.cryptocompare.com/media/19633/btc.png",
+                valor: "R$ 14123,45",
+                percentual: 34,
+                subiu: true
+            },
+            {
+                id: 2,
+                nome: "Ethereum (ETH)",
+                imagem: "https://www.cryptocompare.com/media/20646/eth.png",
+                valor: "R$ 540,12",
+                percentual: 30,
+                subiu: true
+            },
+            {
+                id: 3,
+                nome: "Litecoin (LTC)",
+                imagem: "https://www.cryptocompare.com/media/19782/litecoin-logo.png",
+                valor: "R$ 234,20",
+                percentual: 24,
+                subiu: true
+            },
+            {
+                id: 4,
+                nome: "DigitalCash (DASH)",
+                imagem: "https://www.cryptocompare.com/media/20626/dash.png",
+                valor: "R$ 450,13",
+                percentual: -3,
+                subiu: false
+            },
+            {
+                id: 5,
+                nome: "Monero (XMR)",
+                imagem: "https://www.cryptocompare.com/media/19969/xmr.png",
+                valor: "R$ 112,67",
+                percentual: -23,
+                subiu: false
+            }
+        ];
+
         $scope.labels = ["Investimentos R$ ", "Rendimentos R$ "];
         $scope.data = [1000, 120];
 
@@ -28,7 +73,8 @@ angular.module('prisappApp')
                 meses: 'Faltam 10 meses para conclusão',
                 icon: 'spinner',
                 cancel: true,
-                saque: false
+                saque: false,
+                moedas: $scope.moedas
             },
             {
                 id: 2,
@@ -39,7 +85,8 @@ angular.module('prisappApp')
                 meses: 'Faltam 3 meses para conclusão',
                 icon: 'spinner',
                 cancel: true,
-                saque: false
+                saque: false,
+                moedas: $scope.moedas
             },
             {
                 id: 3,
@@ -50,7 +97,8 @@ angular.module('prisappApp')
                 meses: 'Faltam 7 meses para conclusão',
                 icon: 'spinner',
                 cancel: true,
-                saque: false
+                saque: false,
+                moedas: $scope.moedas
             },
             {
                 id: 4,
@@ -61,7 +109,8 @@ angular.module('prisappApp')
                 meses: 'concluído',
                 icon: 'check-circle',
                 cancel: false,
-                saque: true
+                saque: true,
+                moedas: $scope.moedas
             },
             {
                 id: 5,
@@ -72,7 +121,8 @@ angular.module('prisappApp')
                 meses: 'cancelado',
                 icon: 'ban',
                 cancel: false,
-                saque: false
+                saque: false,
+                moedas: $scope.moedas
             }
         ];
     });

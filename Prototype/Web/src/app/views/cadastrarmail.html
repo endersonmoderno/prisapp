@@ -1,4 +1,5 @@
-﻿<main ng-cloak>
+<main ng-cloak>
+  <div id="divLoad" class="loading" ng-show="ShowLoad">{{ MsgDivLoad }}</div>
   <div class="container">
     <div class="row">
       <div style="margin-left:10px; text-align:center;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -99,14 +100,17 @@
           <div class="success-wrap">
             <h2 class="confirmation-text">Obrigado</h2>
             <p>Cadastro realizado com sucesso.</p>
+            <hr />
+            <md-button ng-href="#/main" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Vamos Investir!</md-button>
           </div>
         </div>
         <div class="animate-switch" ng-switch-when="error">
           <div class="error-wrap">
             <h2 class="confirmation-text">Erro</h2>
-            <p>Ocorreu uma falha no cadastro.<br>Por favor, tente mais tarde.</p>
+            <p>Ocorreu uma falha no cadastro.</p>
+            <p class="danger"><strong>{{msgerro}}</strong></p>
             <hr />
-            <md-button ng-href="#/cadastrar" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Vamos Investir!</md-button>
+            <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
           </div>
         </div>
       </div>
