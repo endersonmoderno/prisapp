@@ -1,5 +1,12 @@
-﻿
 <main ng-cloak>
+
+  <div id="divLoad" class="loading" ng-show="ShowLoad">
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <br /><p>{{ MsgDivLoad }}</p>
+  </div>
+
   <div class="container">
     <div class="row">
       <div style="margin-left:10px; text-align:center;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -284,15 +291,16 @@
             <h2 class="confirmation-text">Obrigado</h2>
             <p>Pesquisa realizada com sucesso.</p>
             <hr />
-            <md-button ng-href="#/investimento" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Investir</md-button>
+            <md-button ng-href="#/investimento" class="md-raised md-primary btentrar" style="background-color: darkgreen;"><i class="fa fa-cart-plus" aria-hidden="true"></i> Investir</md-button>
           </div>
         </div>
         <div class="animate-switch" ng-switch-when="error">
           <div class="error-wrap">
             <h2 class="confirmation-text">Erro</h2>
-            <p>Ocorreu uma falha na pesquisa.<br>Por favor, tente mais tarde.</p>
+            <p>Ocorreu uma falha na pesquisa.</p>
+            <p class="danger"><strong>{{msgerro}}</strong></p>
             <hr />
-            <md-button ng-href="#/investimento" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Vamos Começar!</md-button>
+            <button type="button" class="btn btn-info" ng-click="back()">Voltar</button>
           </div>
         </div>
       </div>

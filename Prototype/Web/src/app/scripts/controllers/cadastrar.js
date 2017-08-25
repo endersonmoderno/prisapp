@@ -15,31 +15,53 @@ angular.module('prisappApp')
             'Karma'
         ];
 
+        $scope.msgerro = "";
+        $scope.ShowLoad = false;
+
+        //manipula o load da página
+        $scope.Loader = function (isCarregar, msg) {
+            if (msg === undefined) { msg = "Aguarde, carregando..."; }
+            $scope.ShowLoad = isCarregar;
+            $scope.MsgDivLoad = msg;
+        };
+
         $scope.usuario = $localStorage.simusuario;
 
-        $scope.obj = {
-            nome: $scope.usuario.nome,
-            sobrenome: $scope.usuario.sobrenome,
-            dtnascdia: "",
-            dtnascmes: "",
-            dtnascano: "",
-            email: $scope.usuario.login,
-            sexo: "",
-            jainvestiu: "N",
-            poupanca: false,
-            tesouro: false,
-            acoes: false,
-            imoveis: false,
-            outros: false,
-            grausatisfeito: 0,
-            jainvestiucripto: "N",
-            nuncapois: 0,
-            confianca: 0,
-            maneirafacil: "N",
-            valor: "",
-            estado: "",
-            cidade: ""
-        };
+        //verifica se possui pesquisa
+        if ($localStorage.simpesquisa && $localStorage.simpesquisa.dtnascdia !== '') {
+
+            //carrega pesquisa com valor existente
+            $scope.obj = $localStorage.simpesquisa;
+
+        } else {
+
+            //novo objeto
+            $scope.obj = {
+                id: 0,
+                nome: $scope.usuario.nome,
+                sobrenome: $scope.usuario.sobrenome,
+                usuario_id: $scope.usuario.id,
+                dtnascdia: "",
+                dtnascmes: "",
+                dtnascano: "",
+                email: $scope.usuario.login,
+                sexo: "",
+                jainvestiu: "N",
+                poupanca: false,
+                tesouro: false,
+                acoes: false,
+                imoveis: false,
+                outros: false,
+                grausatisfeito: 0,
+                jainvestiucripto: "N",
+                nuncapois: 0,
+                confianca: 0,
+                maneirafacil: "N",
+                valor: "",
+                estado: "",
+                cidade: ""
+            };
+        }
 
         $scope.stage = "";
         $scope.indice = 0;
@@ -131,36 +153,48 @@ angular.module('prisappApp')
 
         // Post to desired exposed web service.
         $scope.submitForm = function () {
-            var wsUrl = "someURL";
 
-            // Check form validity and submit data using $http
             if ($scope.myform.$valid) {
                 $scope.validar = false;
 
-                //TODO: verificar se gravação local ocorrerá aqui
-                $localStorage.pesquisa = $scope.obj;
+                $scope.Loader(true);
 
-                $http({
-                    method: 'POST',
-                    url: wsUrl,
-                    data: JSON.stringify($scope.obj)
-                }).then(function successCallback(response) {
-                    if (response
-                        && response.data
-                        && response.data.status
-                        && response.data.status === 'success') {
+                var simhost = $localStorage.simhost;
+
+                var service = $http.post(simhost + "mod_pesquisa/api.php/pesquisa/nova", $scope.obj);
+                service.then(function onSuccess(response) {
+
+                    //obter dados de retorno da api
+                    var data = response.data;
+
+                    if (data.retorno.status === "ok") {
+
+                        //gravação de pesquisa em local
+                        $localStorage.simpesquisa = data.retorno.dados.pesquisa;
+
+                        //redireciona
                         $scope.stage = "success";
                     } else {
-                        if (response
-                            && response.data
-                            && response.data.status
-                            && response.data.status === 'error') {
-                            $scope.stage = "error";
-                        }
+                        $scope.stage = "error";
+                        //retonra exceção programada
+                        $scope.msgerro = data.retorno.dados.erro;
                     }
-                }, function errorCallback(response) {
+                }).catch(function onError(response) {
+
+                    //obter dados de retorno da api
+                    var data = response.data;
+
+                    //se ocorrer erro, exibe mensagem
+                    if (data !== undefined && data !== "" && data.retorno !== undefined) {
+                        $scope.msgerro = "Serviço falhou: " + data.retorno.dados.erro;
+                    } else {
+                        $scope.msgerro = "Serviço falhou tente novamente.";
+                    }
+
                     $scope.stage = "error";
-                    console.log(response);
+
+                }).finally(function () {
+                    $scope.Loader(false);
                 });
             }
         };

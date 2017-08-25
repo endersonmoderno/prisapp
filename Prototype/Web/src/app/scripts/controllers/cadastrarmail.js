@@ -97,11 +97,12 @@ angular.module('prisappApp')
 
                     if (data.retorno.status === "ok") {
 
-                        //TODO: verificar se gravação local ocorrerá aqui
-                        $localStorage.simusuario = $scope.obj;
+                        //gravação local de usuário
+                        $localStorage.simusuario = data.retorno.dados.usuario;
+                        $localStorage.simpesquisa = null;
 
                         //recarrega o token em dados locais
-                        $localStorage.simadmintoken = data.retorno.dados.token;
+                        $localStorage.simadmintoken = data.retorno.dados.usuario.token;
 
                         //redireciona
                         $scope.stage = "success";
