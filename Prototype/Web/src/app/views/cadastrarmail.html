@@ -1,5 +1,12 @@
 <main ng-cloak>
-  <div id="divLoad" class="loading" ng-show="ShowLoad">{{ MsgDivLoad }}</div>
+
+  <div id="divLoad" class="loading" ng-show="ShowLoad">
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <br /><p>{{ MsgDivLoad }}</p>
+  </div>
+
   <div class="container">
     <div class="row">
       <div style="margin-left:10px; text-align:center;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

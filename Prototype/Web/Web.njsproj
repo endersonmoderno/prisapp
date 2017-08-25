@@ -271,6 +271,12 @@
     <Compile Include="src\bower_components\angular-touch\angular-touch.js" />
     <Compile Include="src\bower_components\angular-touch\angular-touch.min.js" />
     <Compile Include="src\bower_components\angular-touch\index.js" />
+    <Compile Include="src\bower_components\angular-ui-notification\dist\angular-ui-notification.js" />
+    <Compile Include="src\bower_components\angular-ui-notification\dist\angular-ui-notification.min.js" />
+    <Compile Include="src\bower_components\angular-ui-notification\gulpfile.js" />
+    <Compile Include="src\bower_components\angular-ui-notification\index.js" />
+    <Compile Include="src\bower_components\angular-ui-notification\protractor_conf.js" />
+    <Compile Include="src\bower_components\angular-ui-notification\src\angular-ui-notification.js" />
     <Compile Include="src\bower_components\angular\angular.js" />
     <Compile Include="src\bower_components\angular\angular.min.js" />
     <Compile Include="src\bower_components\angular\index.js" />
@@ -501,6 +507,16 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="src\bower_components\angular-ui-notification\.bower.json" />
+    <Content Include="src\bower_components\angular-ui-notification\bower.json" />
+    <Content Include="src\bower_components\angular-ui-notification\dist\angular-ui-notification.css" />
+    <Content Include="src\bower_components\angular-ui-notification\dist\angular-ui-notification.min.css" />
+    <Content Include="src\bower_components\angular-ui-notification\LICENSE" />
+    <Content Include="src\bower_components\angular-ui-notification\package.json" />
+    <Content Include="src\bower_components\angular-ui-notification\README.md" />
+    <Content Include="src\bower_components\angular-ui-notification\src\angular-ui-notification.html" />
+    <Content Include="src\bower_components\angular-ui-notification\src\angular-ui-notification.less" />
+    <Content Include="src\bower_components\angular-ui-notification\src\build.less" />
     <Content Include="src\bower_components\ngstorage\.bower.json" />
     <Content Include="src\bower_components\ngstorage\.editorconfig" />
     <Content Include="src\bower_components\ngstorage\.gitattributes" />
@@ -1384,6 +1400,9 @@
     <Folder Include="src\bower_components\angular-route\" />
     <Folder Include="src\bower_components\angular-sanitize\" />
     <Folder Include="src\bower_components\angular-touch\" />
+    <Folder Include="src\bower_components\angular-ui-notification\" />
+    <Folder Include="src\bower_components\angular-ui-notification\dist\" />
+    <Folder Include="src\bower_components\angular-ui-notification\src\" />
     <Folder Include="src\bower_components\angular\" />
     <Folder Include="src\bower_components\bootstrap\" />
     <Folder Include="src\bower_components\bootstrap\dist\" />

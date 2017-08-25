@@ -1,4 +1,12 @@
-﻿<div class="col-md-12 text-center">
+<div class="col-md-12 text-center" ng-cloak>
+
+  <div id="divLoad" class="loading" ng-show="ShowLoad">
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <br /><p>{{ MsgDivLoad }}</p>
+  </div>
+
   <h4><i class="fa fa-money" aria-hidden="true"></i> Informe o Valor:</h4>
   <md-input-container ng-cloak md-no-float class="md-block" style="width:95%;">
     <md-icon class="name">R<i class="fa fa-usd" aria-hidden="true"></i></md-icon>

@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @ngdoc function
@@ -15,15 +15,15 @@ angular.module('prisappApp')
             'Karma'
         ];
 
-        $scope.usuario = $localStorage.usuario;
+        $scope.usuario = $localStorage.simusuario;
 
         $scope.obj = {
             nome: $scope.usuario.nome,
-			sobrenome: $scope.usuario.sobrenome,
+            sobrenome: $scope.usuario.sobrenome,
             dtnascdia: "",
             dtnascmes: "",
             dtnascano: "",
-            email: $scope.usuario.email,
+            email: $scope.usuario.login,
             sexo: "",
             jainvestiu: "N",
             poupanca: false,

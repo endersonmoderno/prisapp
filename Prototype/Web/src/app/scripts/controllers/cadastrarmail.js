@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @ngdoc function
@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('CadastrarmailCtrl', function ($scope, $http, $filter, $localStorage) {
+    .controller('CadastrarmailCtrl', function ($scope, $http, $localStorage) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -25,6 +25,13 @@ angular.module('prisappApp')
             sobrenome: "",
             email: "",
             senha: ""
+        };
+
+        //manipula o load da página
+        $scope.Loader = function (isCarregar, msg) {
+            if (msg === undefined) { msg = "Aguarde, carregando..."; }
+            $scope.ShowLoad = isCarregar;
+            $scope.MsgDivLoad = msg;
         };
 
         // Navigation functions
@@ -71,7 +78,8 @@ angular.module('prisappApp')
                 //monta json de novo objeto
                 $scope.novoObj = {
                     id: 0,
-                    nome: $scope.obj.nome + " " + $scope.obj.sobrenome,
+                    nome: $scope.obj.nome,
+                    sobrenome: $scope.obj.sobrenome,
                     login: $scope.obj.email,
                     token: "",
                     senha: $scope.obj.senha,
@@ -90,7 +98,7 @@ angular.module('prisappApp')
                     if (data.retorno.status === "ok") {
 
                         //TODO: verificar se gravação local ocorrerá aqui
-                        $localStorage.usuario = $scope.obj;
+                        $localStorage.simusuario = $scope.obj;
 
                         //recarrega o token em dados locais
                         $localStorage.simadmintoken = data.retorno.dados.token;
@@ -130,13 +138,6 @@ angular.module('prisappApp')
             //$scope.validar = false;
             //$scope.toggleJSONView = false;
             //$scope.toggleFormErrorsView = false;
-        };
-
-        //manipula o load da página
-        $scope.Loader = function (isCarregar, msg) {
-            if (msg === undefined) { msg = "Aguarde, carregando..."; }
-            $scope.ShowLoad = isCarregar;
-            $scope.MsgDivLoad = msg;
         };
 
     });

@@ -1,22 +1,27 @@
-﻿<div ng-cloak class="logintela logotipologin">
-  <md-content ng-cloak  class="md-no-momentum" style="background:none;">
+<div ng-cloak class="logintela logotipologin">
+
+  <md-content ng-cloak class="md-no-momentum" style="background:none;">
+
+    <div id="divLoad" class="loading" ng-show="ShowLoad">
+      <div layout="row" layout-sm="column" layout-align="space-around">
+        <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+      </div>
+      <br /><p>{{ MsgDivLoad }}</p>
+    </div>
 
     <md-input-container ng-cloak class="md-icon-float md-block" style="margin-top:235px; width:95%;">
       <md-icon class="login"><i class="fa fa-user" aria-hidden="true"></i></md-icon>
-      <input ng-model="user.login" type="text" placeholder="Informe seu login" ng-required="true">
+      <input ng-model="obj.login" type="text" placeholder="Informe seu login" ng-required="true">
     </md-input-container>
 
     <md-input-container ng-cloak class="md-block" style="margin-top: -20px; width:95%;">
       <md-icon class="password"><i class="fa fa-unlock-alt" aria-hidden="true"></i></md-icon>
-      <input ng-model="user.email" type="password" placeholder="Informe sua senha" ng-required="true">
+      <input ng-model="obj.senha" type="password" placeholder="Informe sua senha" ng-required="true">
     </md-input-container>
-    
-    <md-button ng-href="#/main" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Entrar</md-button>
 
+    <md-button ng-click="Entrar()" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Entrar</md-button>
     <div class="text-center"><a href="#">Esqueceu sua senha?</a></div>
-
     <hr />
-
     <md-button ng-href="#/cadastrarmail" class="md-raised md-primary btentrar" style="background-color: darkgreen;">Cadastre-se</md-button>
 
   </md-content>

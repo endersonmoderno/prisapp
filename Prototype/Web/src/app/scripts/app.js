@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /**
  * @ngdoc overview
@@ -20,7 +20,8 @@ angular
         'ngSanitize',
         'ngMaterial',
         'chart.js',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'ui-notification'
     ])
     .config(function ($routeProvider, $locationProvider, $mdDateLocaleProvider) {
 
@@ -135,6 +136,17 @@ angular
             return moment(date).format('DD/MM/YYYY');
         };
 
+    })
+    .config(function (NotificationProvider) {
+        NotificationProvider.setOptions({
+            delay: 5000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'right',
+            positionY: 'top'
+        });
     })
     .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window, $location) {
 

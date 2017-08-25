@@ -1,4 +1,4 @@
-﻿.fotomenu {
+.fotomenu {
   float: left;
   margin-bottom: 10px;
   margin-left: 20px;
@@ -103,11 +103,12 @@
 .loading {
   background-color: grey;
   color: #fff;
-  font-size: 22px;
+  font-size: 18px;
   height: 100%;
   left: 0;
   opacity: 0.8;
   padding: 15%;
+  padding-top: 50%;
   position: fixed;
   text-align: center;
   top: 0;
