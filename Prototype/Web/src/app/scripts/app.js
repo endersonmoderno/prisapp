@@ -148,13 +148,12 @@ angular
             positionY: 'top'
         });
     })
-    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window, $location) {
+    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $route, $window, $location, $localStorage) {
 
-        $scope.$route = $route;
+        $scope.$route = $route;        
 
         $scope.toggleLeft = buildToggler('left');
         $scope.toggleRight = buildToggler('right');
-
 
         $scope.voltar = function () {
             $window.history.back();
@@ -162,6 +161,12 @@ angular
 
         $scope.avancar = function (destino) {
             $location.url('/' + destino);
+        };
+
+        $scope.sair = function () {
+            $localStorage.$reset();
+            $scope.toggleLeft();
+            $location.url('/login');
         };
 
         function buildToggler(componentId) {

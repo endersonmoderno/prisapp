@@ -8,7 +8,7 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('MainCtrl', function ($scope, $location) {
+    .controller('MainCtrl', function ($scope, $location, $localStorage) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -16,6 +16,12 @@ angular.module('prisappApp')
         ];
 
         $scope.possui = false;
+
+        //carrega usuário
+        $scope.usuario = $localStorage.simusuario;
+
+        //controle de menu (controle pai)
+        $scope.$parent.usuario = $scope.usuario;
 
         $scope.moedas = [
             {

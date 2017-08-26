@@ -7,9 +7,10 @@
 }
 
 .nomecxmenu {
-  width: 135px;
   float: left;
-  padding-top: 10px;
+  margin-left: 30px;
+  padding-top: 13px;
+  width: 227px;
 }
 
 .nomemenu {
