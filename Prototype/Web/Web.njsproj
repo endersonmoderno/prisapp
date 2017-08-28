@@ -69,6 +69,7 @@
     <Compile Include="src\bower_components\angular-cookies\angular-cookies.js" />
     <Compile Include="src\bower_components\angular-cookies\angular-cookies.min.js" />
     <Compile Include="src\bower_components\angular-cookies\index.js" />
+    <Compile Include="src\bower_components\angular-locale-pt-br\angular-locale_pt-br.js" />
     <Compile Include="src\bower_components\angular-material\angular-material-mocks.js" />
     <Compile Include="src\bower_components\angular-material\angular-material.js" />
     <Compile Include="src\bower_components\angular-material\angular-material.min.js" />
@@ -507,6 +508,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="src\bower_components\angular-locale-pt-br\.bower.json" />
+    <Content Include="src\bower_components\angular-locale-pt-br\bower.json" />
+    <Content Include="src\bower_components\angular-locale-pt-br\README.md" />
     <Content Include="src\bower_components\angular-ui-notification\.bower.json" />
     <Content Include="src\bower_components\angular-ui-notification\bower.json" />
     <Content Include="src\bower_components\angular-ui-notification\dist\angular-ui-notification.css" />
@@ -1299,6 +1303,7 @@
     <Folder Include="src\bower_components\angular-chart.js\" />
     <Folder Include="src\bower_components\angular-chart.js\dist\" />
     <Folder Include="src\bower_components\angular-cookies\" />
+    <Folder Include="src\bower_components\angular-locale-pt-br\" />
     <Folder Include="src\bower_components\angular-material\" />
     <Folder Include="src\bower_components\angular-material\layouts\" />
     <Folder Include="src\bower_components\angular-material\modules\" />

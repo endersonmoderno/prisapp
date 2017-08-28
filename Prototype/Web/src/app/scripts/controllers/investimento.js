@@ -27,15 +27,15 @@ angular.module('prisappApp')
         $scope.Loader(true);
 
         //obter dados de usuário local
-        var usuario = $localStorage.simusuario;
+        $scope.usuario = $localStorage.simusuario;
 
         //consultar se já preencheu a pesquisa e redirecionar
         //------------------------------------------------------------------------------------
         $scope.Loader(true, "Aguarde, acessando sistema...");
 
         var simhost = $localStorage.simhost;
-        
-        var service = $http.get(simhost + "mod_pesquisa/api.php/pesquisa/" + usuario.id);
+
+        var service = $http.get(simhost + "mod_pesquisa/api.php/pesquisa/" + $scope.usuario.id);
         service.then(function onSuccess(response) {
 
             //obter dados de retorno da api
@@ -79,12 +79,48 @@ angular.module('prisappApp')
         }).finally(function () {
             $scope.Loader(false);
         });
-
-        $scope.obj = {
-            valor: 100.01,
-            periodo: 3,
-            rendimento: 0
-        };
         //------------------------------------------------------------------------------------
 
+
+        //carregar dados para calculo investimento
+        //------------------------------------------------------------------------------------
+        //TODO: aqui
+        $scope.indiceRendimento = 0.1;
+        //------------------------------------------------------------------------------------
+
+        //carrega pesquisa de local
+        $scope.pesquisa = $localStorage.simpesquisa;
+
+        //ajusta valor de pesquisa
+        $scope.pesquisa.valor = parseFloat($scope.pesquisa.valor);
+
+        //carrega objeto padrão
+        $scope.obj = {
+            valor: $scope.pesquisa.valor,
+            periodo: 6,
+            rendimento: 0,
+            total: 0,
+            data: null
+        };
+
+        //cálculo rendimento estimado
+        $scope.calcular = function () {
+            $scope.obj.rendimento = $scope.obj.valor * $scope.obj.periodo * $scope.indiceRendimento;
+            $scope.obj.total = $scope.obj.valor + $scope.obj.rendimento;
+        };
+
+        //calcular primeira estimativa
+        $scope.calcular();
+
+        $scope.continuar = function () {
+
+            //captura data atual
+            $scope.obj.data = new Date();
+
+            //armazena em local
+            $localStorage.siminvestimento = $scope.obj;
+
+            //redireciona para finalizar
+            $location.path("/investimento2");
+        };
     });
