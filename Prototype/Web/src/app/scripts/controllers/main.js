@@ -76,7 +76,7 @@ angular.module('prisappApp')
             $scope.items = [
                 {
                     id: 1,
-                    data: new Date(investimento.data).toLocaleFormat('%e/%m/%Y - %H:%M'),
+                    data: moment(new Date(investimento.data)).format('DD/MM/YYYY - HH:mm'),
                     investimento: investimento.valor,
                     rendimento: investimento.rendimento,
                     periodo: investimento.periodo + ' meses',

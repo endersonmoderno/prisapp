@@ -44,8 +44,34 @@ angular.module('prisappApp')
             if (data.retorno.status === "ok") {
 
                 if (data.retorno.dados.pesquisa) {
+
                     //gravação local de dados de pesquisa
                     $localStorage.simpesquisa = data.retorno.dados.pesquisa;
+
+                    //carregar dados para calculo investimento
+                    //------------------------------------------------------------------------------------
+                    //TODO: aqui
+                    $scope.indiceRendimento = 0.1;
+                    //------------------------------------------------------------------------------------
+
+                    //carrega pesquisa de local
+                    $scope.pesquisa = $localStorage.simpesquisa;
+
+                    //ajusta valor de pesquisa
+                    $scope.pesquisa.valor = parseFloat($scope.pesquisa.valor);
+
+                    //carrega objeto padrão
+                    $scope.obj = {
+                        valor: $scope.pesquisa.valor,
+                        periodo: 6,
+                        rendimento: 0,
+                        total: 0,
+                        data: null
+                    };
+
+                    //calcular primeira estimativa
+                    $scope.calcular();
+
                 } else {
                     //redireciona
                     $location.path("/cadastrar");
@@ -82,35 +108,11 @@ angular.module('prisappApp')
         //------------------------------------------------------------------------------------
 
 
-        //carregar dados para calculo investimento
-        //------------------------------------------------------------------------------------
-        //TODO: aqui
-        $scope.indiceRendimento = 0.1;
-        //------------------------------------------------------------------------------------
-
-        //carrega pesquisa de local
-        $scope.pesquisa = $localStorage.simpesquisa;
-
-        //ajusta valor de pesquisa
-        $scope.pesquisa.valor = parseFloat($scope.pesquisa.valor);
-
-        //carrega objeto padrão
-        $scope.obj = {
-            valor: $scope.pesquisa.valor,
-            periodo: 6,
-            rendimento: 0,
-            total: 0,
-            data: null
-        };
-
         //cálculo rendimento estimado
         $scope.calcular = function () {
             $scope.obj.rendimento = $scope.obj.valor * $scope.obj.periodo * $scope.indiceRendimento;
             $scope.obj.total = $scope.obj.valor + $scope.obj.rendimento;
-        };
-
-        //calcular primeira estimativa
-        $scope.calcular();
+        };       
 
         $scope.continuar = function () {
 

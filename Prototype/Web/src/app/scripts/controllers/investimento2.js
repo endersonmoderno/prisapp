@@ -21,19 +21,19 @@ angular.module('prisappApp')
 
         //recupera investimento de local
         var investimento = $localStorage.siminvestimento;
-
+        
         //obter dados de usuário local
         $scope.usuario = $localStorage.simusuario;
 
         //para tela
         $scope.obj = {
             id: 0,
-            data: new Date(investimento.data).toLocaleFormat('%e/%m/%Y - %H:%M'),
+            data: moment(new Date(investimento.data)).format('DD/MM/YYYY - HH:mm'),
             investimento: investimento.valor,
             rendimento: investimento.rendimento,
             periodo: investimento.periodo + ' meses'
         };
-
+        
         //TODO: recuperar top moedas do período
         $scope.moedas = [
             {
