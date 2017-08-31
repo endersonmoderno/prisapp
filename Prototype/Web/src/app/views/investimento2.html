@@ -39,7 +39,7 @@
         <img ng-src="{{moeda.imagem}}" class="md-avatar" alt="{{moeda.nome}}" />
         <div class="md-list-item-text">
           <h3> {{ moeda.nome }} </h3>
-          <p> {{ moeda.valor }} </p>
+          <p> de <del>{{ moeda.valorinicial | currency }}</del><br />para {{ moeda.valoratual | currency }} </p>
         </div>
         <p ng-show="moeda.subiu" style="color:green; margin-top:17px;">({{moeda.percentual}}%) <i class="fa fa-arrow-up" aria-hidden="true"></i></p>
         <p ng-hide="moeda.subiu" style="color:darkred; margin-top:17px;">({{moeda.percentual}}%) <i class="fa fa-arrow-down" aria-hidden="true"></i></p>
