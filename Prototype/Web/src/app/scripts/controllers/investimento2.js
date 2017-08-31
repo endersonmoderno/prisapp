@@ -31,11 +31,16 @@ angular.module('prisappApp')
             data: moment(new Date(investimento.data)).format('DD/MM/YYYY - HH:mm'),
             investimento: investimento.valor,
             rendimento: investimento.rendimento,
-            periodo: investimento.periodo + ' meses'
+            periodo: investimento.periodo + ' meses',
+            percentual: investimento.percentual,
+            total: investimento.total
         };
-        
+
+        //pega moedas de local
+        $scope.moedas = $localStorage.simmoedas;
+
         //TODO: recuperar top moedas do período
-        $scope.moedas = [
+        $scope.moedasAntigo = [
             {
                 id: 1,
                 nome: "Bitcoin (BTC)",

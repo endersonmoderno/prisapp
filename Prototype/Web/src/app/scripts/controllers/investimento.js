@@ -48,12 +48,6 @@ angular.module('prisappApp')
                     //gravação local de dados de pesquisa
                     $localStorage.simpesquisa = data.retorno.dados.pesquisa;
 
-                    //carregar dados para calculo investimento
-                    //------------------------------------------------------------------------------------
-                    //TODO: aqui
-                    $scope.indiceRendimento = 0.1;
-                    //------------------------------------------------------------------------------------
-
                     //carrega pesquisa de local
                     $scope.pesquisa = $localStorage.simpesquisa;
 
@@ -66,11 +60,12 @@ angular.module('prisappApp')
                         periodo: 6,
                         rendimento: 0,
                         total: 0,
+                        percentual: 0,
                         data: null
                     };
 
-                    //calcular primeira estimativa
-                    $scope.calcular();
+                    //carregar dados para calculo investimento
+                    $scope.obterDadosMoedas();
 
                 } else {
                     //redireciona
@@ -103,16 +98,123 @@ angular.module('prisappApp')
             $location.path("/main");
 
         }).finally(function () {
-            $scope.Loader(false);
+            //$scope.Loader(false);
         });
+        //------------------------------------------------------------------------------------
+
+
+        //carregar dados para calculo investimento
+        //------------------------------------------------------------------------------------
+        $scope.obterDadosMoedas = function () {
+
+            $scope.Loader(true, "Aguarde, obtendo valores das moedas...");
+
+            var simhost = $localStorage.simhost;
+
+            var service = $http.get(simhost + "mod_criptomoeda/api.php/moedas");
+            service.then(function onSuccess(response) {
+
+                //obter dados de retorno da api
+                var data = response.data;
+
+                if (data.retorno.status === "ok") {
+
+                    if (data.retorno.dados.moedas) {
+
+                        //gravação local de dados de moedas
+                        $localStorage.simmoedas = data.retorno.dados.moedas.moedas;
+
+                        //gravação local de dados de indices
+                        $localStorage.simindice = data.retorno.dados.moedas.indice;
+
+                        //carrega moedas de api
+                        $scope.moedas = data.retorno.dados.moedas.moedas;
+
+                        //carrega indices de api
+                        $scope.indice = data.retorno.dados.moedas.indice;
+
+                        //calcular primeira estimativa
+                        $scope.calcular();
+                    }
+
+                } else {
+
+                    //retorna exceção programada
+                    Notification.error('Erro ao obter moedas... ' + data.retorno.dados.erro);
+
+                    //redireciona
+                    $location.path("/main");
+                }
+
+            }).catch(function onError(response) {
+
+                //obter dados de retorno da api
+                var data = response.data;
+
+                //se ocorrer erro, exibe mensagem
+                if (data !== undefined && data !== '' && data.retorno !== undefined) {
+                    Notification.error('Serviço falhou: ' + data.retorno.dados.erro);
+                } else {
+                    Notification.error('Serviço falhou tente novamente.');
+                }
+
+                //redireciona
+                $location.path("/main");
+
+            }).finally(function () {
+                $scope.Loader(false);
+            });
+        };
         //------------------------------------------------------------------------------------
 
 
         //cálculo rendimento estimado
         $scope.calcular = function () {
-            $scope.obj.rendimento = $scope.obj.valor * $scope.obj.periodo * $scope.indiceRendimento;
-            $scope.obj.total = $scope.obj.valor + $scope.obj.rendimento;
-        };       
+
+            var fatormedia = $scope.indice.divisao;
+            var investimento = $scope.obj.valor;
+            var investidivid = investimento / fatormedia;
+            var moeda1 = $scope.moedas[0];
+            var moeda2 = $scope.moedas[1];
+            var moeda3 = $scope.moedas[2];
+            var moeda4 = $scope.moedas[3];
+            var moeda5 = $scope.moedas[4];
+            var moeda6 = $scope.moedas[5];
+            var moeda7 = $scope.moedas[6];
+            var rendmoeda1 = investidivid * (moeda1.percentual / 100);
+            var rendmoeda2 = investidivid * (moeda2.percentual / 100);
+            var rendmoeda3 = investidivid * (moeda3.percentual / 100);
+            var rendmoeda4 = investidivid * (moeda4.percentual / 100);
+            var rendmoeda5 = investidivid * (moeda5.percentual / 100);
+            var rendmoeda6 = investidivid * (moeda6.percentual / 100);
+            var rendmoeda7 = investidivid * (moeda7.percentual / 100);
+            var rendefetivomoeda1 = 0; if (rendmoeda1 > 0) { rendefetivomoeda1 = rendmoeda1; }
+            var rendefetivomoeda2 = 0; if (rendmoeda2 > 0) { rendefetivomoeda2 = rendmoeda1; }
+            var rendefetivomoeda3 = 0; if (rendmoeda3 > 0) { rendefetivomoeda3 = rendmoeda3; }
+            var rendefetivomoeda4 = 0; if (rendmoeda4 > 0) { rendefetivomoeda4 = rendmoeda4; }
+            var rendefetivomoeda5 = 0; if (rendmoeda5 > 0) { rendefetivomoeda5 = rendmoeda5; }
+            var rendefetivomoeda6 = 0; if (rendmoeda6 > 0) { rendefetivomoeda6 = rendmoeda6; }
+            var rendefetivomoeda7 = 0; if (rendmoeda7 > 0) { rendefetivomoeda7 = rendmoeda7; }
+            var rendmedio = rendefetivomoeda1 + rendefetivomoeda2 + rendefetivomoeda3 + rendefetivomoeda4;
+            rendmedio = rendmedio + rendefetivomoeda5 + rendefetivomoeda6 + rendefetivomoeda7;
+            var comissao = $scope.indice.com3;
+            if ($scope.obj.periodo >= 10 && $scope.obj.periodo <= 12) {
+                comissao = $scope.indice.com1;
+            } else {
+                if ($scope.obj.periodo >= 6 && $scope.obj.periodo <= 9) {
+                    comissao = $scope.indice.com2;
+                }
+            }
+            var comissaovalor = rendmedio * comissao;
+            var rendtotal = rendmedio - comissaovalor;
+            var ganhovalor = investimento + rendtotal;
+            var ganhoperc = (ganhovalor - investimento) / ganhovalor * 100;
+            var rendtotalperiodo = rendtotal * $scope.obj.periodo;
+
+            $scope.obj.rendimento = rendtotalperiodo;
+            $scope.obj.total = investimento + rendtotalperiodo;
+            $scope.obj.percentual = parseInt(rendtotalperiodo / investimento * 100);
+        };
 
         $scope.continuar = function () {
 

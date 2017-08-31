@@ -8,13 +8,23 @@
  * Controller of the prisappApp
  */
 angular.module('prisappApp')
-    .controller('MainCtrl', function ($scope, $location, $localStorage) {
+    .controller('MainCtrl', function (Notification, $scope, $http, $localStorage, $location) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
             'Karma'
         ];
 
+        $scope.ShowLoad = false;
+
+        //manipula o load da página
+        $scope.Loader = function (isCarregar, msg) {
+            if (msg === undefined) { msg = "Aguarde, carregando..."; }
+            $scope.ShowLoad = isCarregar;
+            $scope.MsgDivLoad = msg;
+        };
+
+        //inibir exibição de gráfico
         $scope.possui = false;
 
         //carrega usuário
@@ -23,18 +33,126 @@ angular.module('prisappApp')
         //controle de menu (controle pai)
         $scope.$parent.usuario = $scope.usuario;
 
-        //TODO: carregar resumo da api
-
-        //carregar resumo
+        //carregar objeto padrão
         $scope.resumo = {
             id: 0,
-            investimento: 1000.00,
-            rendimento: 120.00,
-            total: 1120.00,
-            percentual: 12
+            investimento: 0,
+            rendimento: 0,
+            total: 0,
+            percentual: 0,
+            data: null
         };
 
-        //TODO: até obter o resumo da api
+        //consultar resumo
+        //------------------------------------------------------------------------------------
+        $scope.Loader(true, "Aguarde, acessando sistema...");
+
+        var simhost = $localStorage.simhost;
+
+        var service = $http.get(simhost + "mod_resumo/api.php/resumo/" + $scope.usuario.id);
+        service.then(function onSuccess(response) {
+
+            //obter dados de retorno da api
+            var data = response.data;
+
+            if (data.retorno.status === "ok") {
+
+                if (data.retorno.dados.resumo) {
+
+                    //gravação local de dados de resumo
+                    $localStorage.simresumo = data.retorno.dados.resumo;
+
+                    //carrega resumo de api
+                    $scope.resumo = data.retorno.dados.resumo;
+
+                    //habilitar exibição do gráfico
+                    $scope.possui = true;
+
+                    //carregar gráfico
+                    $scope.labels = ["Investimentos R$ ", "Rendimentos R$ "];
+                    $scope.data = [$scope.resumo.investimento, $scope.resumo.rendimento];
+                }
+
+            } else {
+
+                //retorna exceção programada
+                Notification.error(data.retorno.dados.erro);
+            }
+
+        }).catch(function onError(response) {
+
+            //obter dados de retorno da api
+            var data = response.data;
+
+            //se ocorrer erro, exibe mensagem
+            if (data !== undefined && data !== '' && data.retorno !== undefined) {
+                Notification.error('Serviço falhou: ' + data.retorno.dados.erro);
+            } else {
+                Notification.error('Serviço falhou tente novamente.');
+            }
+
+        }).finally(function () {
+            $scope.Loader(false);
+        });
+        //------------------------------------------------------------------------------------
+
+
+        //consultar histórico
+        //------------------------------------------------------------------------------------
+        $scope.consultarHistorico = function () {
+
+            $scope.Loader(true, "Aguarde, acessando sistema...");
+
+            var simhost = $localStorage.simhost;
+
+            var service = $http.get(simhost + "mod_investimento/api.php/investimento/" + $scope.usuario.id);
+            service.then(function onSuccess(response) {
+
+                //obter dados de retorno da api
+                var data = response.data;
+
+                if (data.retorno.status === "ok") {
+
+                    if (data.retorno.dados.investimento) {
+
+                        //gravação local de dados de investimentos
+                        $localStorage.siminvestimentos = data.retorno.dados.investimento;
+
+                        //carrega investimentos de api
+                        $scope.items = data.retorno.dados.investimento;
+
+                        //carregar gráfico
+                        $scope.labels = ["Investimentos R$ ", "Rendimentos R$ "];
+                        $scope.data = [$scope.resumo.investimento, $scope.resumo.rendimento];
+                    }
+
+                } else {
+
+                    //retorna exceção programada
+                    Notification.error(data.retorno.dados.erro);
+                }
+
+            }).catch(function onError(response) {
+
+                //obter dados de retorno da api
+                var data = response.data;
+
+                //se ocorrer erro, exibe mensagem
+                if (data !== undefined && data !== '' && data.retorno !== undefined) {
+                    Notification.error('Serviço falhou: ' + data.retorno.dados.erro);
+                } else {
+                    Notification.error('Serviço falhou tente novamente.');
+                }
+
+            }).finally(function () {
+                $scope.Loader(false);
+            });
+        };
+        //------------------------------------------------------------------------------------
+
+        //TODO: carregar histórico da api
+        //os investimento devem ser em lista
+        //TODO: até obter o histórico da api
         //--------------------------------------
         var investimento = null;
         //verifica investimento local
@@ -42,29 +160,14 @@ angular.module('prisappApp')
 
             investimento = $localStorage.siminvestimento;
 
-            $scope.possui = true;
 
+            /*
             var percentual = investimento.rendimento / investimento.valor;
             percentual = percentual * 100;
             percentual = parseInt(percentual);
-
-            //carregar resumo
-            $scope.resumo = {
-                id: 0,
-                investimento: investimento.valor,
-                rendimento: investimento.rendimento,
-                total: investimento.total,
-                percentual: percentual
-            };
+            */
         }
         //-------------------------------------
-
-        //carregar gráfico
-        $scope.labels = ["Investimentos R$ ", "Rendimentos R$ "];
-        $scope.data = [$scope.resumo.investimento, $scope.resumo.rendimento];
-
-        //TODO: carregar histórico da api
-
         if (investimento !== null) {
 
             //meses que faltam para o investimento
@@ -73,14 +176,14 @@ angular.module('prisappApp')
             var mesRestam = investimento.periodo + mesAtual;
             mesRestam = mesRestam - mesInvestimento;
 
-            $scope.items = [
+            $scope.antigo2 = [
                 {
                     id: 1,
                     data: moment(new Date(investimento.data)).format('DD/MM/YYYY - HH:mm'),
                     investimento: investimento.valor,
                     rendimento: investimento.rendimento,
-                    periodo: investimento.periodo + ' meses',
-                    meses: 'Faltam ' + mesRestam + ' meses para conclusão',
+                    periodo: investimento.periodo,
+                    meses: mesRestam,
                     icon: 'spinner',
                     cancel: true,
                     saque: false,

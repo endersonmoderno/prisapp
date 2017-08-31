@@ -9,6 +9,8 @@
     <p><i class="fa fa-money" aria-hidden="true"></i> Investimento: <strong>{{ obj.investimento | currency }}</strong></p>
     <p><i class="fa fa-line-chart" aria-hidden="true"></i> Rendimento: <strong style="font-size:18px;">{{ obj.rendimento | currency }}</strong> </p>
     <p><i class="fa fa-clock-o" aria-hidden="true"></i> Período selecionado: <strong>{{ obj.periodo }}</strong> </p>
+    <p><i class="fa fa-percent" aria-hidden="true"></i> Percentual: <strong>{{ obj.percentual }}%</strong> </p>
+    <p><i class="fa fa-plus-square" aria-hidden="true"></i> Total: <strong style="font-size:18px;">{{ obj.total | currency }}</strong> </p>
   </div>
 
   <hr />
@@ -44,6 +46,12 @@
       </md-list-item>
     </md-list>
   </div>
+
+  <hr />
+
+  <md-button ng-href="#/main" class="md-raised md-warn btnormal"><i class="fa fa-ban" aria-hidden="true"></i> Cancelar</md-button>
+
+  <hr />
 
 </div>
 <style type="text/css">
