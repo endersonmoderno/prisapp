@@ -11,7 +11,7 @@
   <p style="font-size:10px;">{{usuario.nome}}, este será seu investimento, ele não é mensal, você fará isto uma única vez.</p>
   <md-input-container ng-cloak md-no-float class="md-block" style="width:95%;">
     <md-icon class="name">R<i class="fa fa-usd" aria-hidden="true"></i></md-icon>
-    <input ng-model="obj.valor" type="number" step="0.01" placeholder="0,00" ng-required="true" class="txtvalor">
+    <input ng-model="obj.valor" ng-change="calcular()" type="number" step="0.01" placeholder="0,00" ng-required="true" class="txtvalor">
   </md-input-container>
 
   <h4><i class="fa fa-clock-o" aria-hidden="true"></i> Período de investimento:</h4>
@@ -35,6 +35,7 @@
 
   <p style="font-size:10px;">{{usuario.nome}}, você investirá {{obj.valor | currency}} e após {{obj.periodo}} meses terá: </p>
   <h3>R<i class="fa fa-usd" aria-hidden="true"></i> {{obj.total | number : 2}} </h3>
+  <p style="font-size:12px;">um rendimento em cerca de {{obj.percentual}}% </p>
 
   <hr />
 

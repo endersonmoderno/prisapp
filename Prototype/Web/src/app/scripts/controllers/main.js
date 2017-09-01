@@ -71,6 +71,9 @@ angular.module('prisappApp')
                     //carregar gráfico
                     $scope.labels = ["Investimentos R$ ", "Rendimentos R$ "];
                     $scope.data = [$scope.resumo.investimento, $scope.resumo.rendimento];
+
+                    //carrega histórico
+                    $scope.consultarHistorico();
                 }
 
             } else {

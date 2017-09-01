@@ -838,9 +838,6 @@
     <Compile Include="src\bower_components\moment\src\locale\zh-hk.js" />
     <Compile Include="src\bower_components\moment\src\locale\zh-tw.js" />
     <Compile Include="src\bower_components\moment\src\moment.js" />
-    <Compile Include="src\bower_components\moment\templates\default.js" />
-    <Compile Include="src\bower_components\moment\templates\locale-header.js" />
-    <Compile Include="src\bower_components\moment\templates\test-header.js" />
     <Compile Include="src\bower_components\ngstorage\ngStorage.js" />
     <Compile Include="src\bower_components\ngstorage\ngStorage.min.js" />
     <Compile Include="src\bower_components\ngstorage\package.js" />
@@ -1845,7 +1842,6 @@
     <Folder Include="src\bower_components\moment\src\lib\units\" />
     <Folder Include="src\bower_components\moment\src\lib\utils\" />
     <Folder Include="src\bower_components\moment\src\locale\" />
-    <Folder Include="src\bower_components\moment\templates\" />
     <Folder Include="src\bower_components\ngstorage\" />
   </ItemGroup>
   <ItemGroup>

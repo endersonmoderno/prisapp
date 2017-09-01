@@ -1,4 +1,11 @@
-<div id="topo" class="col-md-12 text-center">
+<div id="topo" class="col-md-12 text-center" ng-cloak>
+
+  <div id="divLoad" class="loading" ng-show="ShowLoad">
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <br /><p>{{ MsgDivLoad }}</p>
+  </div>
 
   <h4>{{usuario.nome}}, esta é sua simulação.</h4>
 
@@ -8,7 +15,7 @@
     <h3><i class="fa fa-calendar" aria-hidden="true"></i> {{ obj.data }} </h3>
     <p><i class="fa fa-money" aria-hidden="true"></i> Investimento: <strong>{{ obj.investimento | currency }}</strong></p>
     <p><i class="fa fa-line-chart" aria-hidden="true"></i> Rendimento: <strong style="font-size:18px;">{{ obj.rendimento | currency }}</strong> </p>
-    <p><i class="fa fa-clock-o" aria-hidden="true"></i> Período selecionado: <strong>{{ obj.periodo }}</strong> </p>
+    <p><i class="fa fa-clock-o" aria-hidden="true"></i> Período selecionado: <strong>{{ obj.periodo }} meses</strong> </p>
     <p><i class="fa fa-percent" aria-hidden="true"></i> Percentual: <strong>{{ obj.percentual }}%</strong> </p>
     <p><i class="fa fa-plus-square" aria-hidden="true"></i> Total: <strong style="font-size:18px;">{{ obj.total | currency }}</strong> </p>
   </div>
@@ -27,13 +34,13 @@
     </md-radio-group>
   </md-content>-->
 
-  <md-button ng-href="#/main" class="md-raised md-primary btnormal" style="background-color: darkgreen;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Finalizar Simulação</md-button>
+  <md-button ng-click="salvar()" class="md-raised md-primary btnormal" style="background-color: darkgreen;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Finalizar Simulação</md-button>
 
   <hr />
 
   <div>
     <md-list class="md-dense" flex>
-      <h4 class="md-no-sticky" style="text-align:center;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Top moedas no período</h4>
+      <h4 class="md-no-sticky" style="text-align:center;"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Top moedas últimos 90 dias</h4>
       <p style="font-size:10px;">Estas são as moedas que iremos utilizar para seu investimento render mais.</p>
       <md-list-item class="md-2-line" ng-repeat="moeda in moedas">
         <img ng-src="{{moeda.imagem}}" class="md-avatar" alt="{{moeda.nome}}" />

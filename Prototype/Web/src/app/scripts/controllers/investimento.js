@@ -24,8 +24,6 @@ angular.module('prisappApp')
             $scope.MsgDivLoad = msg;
         };
 
-        $scope.Loader(true);
-
         //obter dados de usuário local
         $scope.usuario = $localStorage.simusuario;
 
