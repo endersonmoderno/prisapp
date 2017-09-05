@@ -40,8 +40,10 @@
     <Compile Include="src\app\scripts\controllers\comoinvestir.js" />
     <Compile Include="src\app\scripts\controllers\conquistas.js" />
     <Compile Include="src\app\scripts\controllers\contato.js" />
+    <Compile Include="src\app\scripts\controllers\contatofb.js" />
     <Compile Include="src\app\scripts\controllers\contatos.js" />
     <Compile Include="src\app\scripts\controllers\dinheiro.js" />
+    <Compile Include="src\app\scripts\controllers\duvidas.js" />
     <Compile Include="src\app\scripts\controllers\investimento.js" />
     <Compile Include="src\app\scripts\controllers\investimento2.js" />
     <Compile Include="src\app\scripts\controllers\login.js" />
@@ -51,6 +53,7 @@
     <Compile Include="src\app\scripts\controllers\receber.js" />
     <Compile Include="src\app\scripts\controllers\receberone.js" />
     <Compile Include="src\app\scripts\controllers\transacoes.js" />
+    <Compile Include="src\bower_components\accordion-material\angular-material.1.0.1.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.js" />
     <Compile Include="src\bower_components\angular-animate\angular-animate.min.js" />
     <Compile Include="src\bower_components\angular-animate\index.js" />
@@ -848,6 +851,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="src\app\views\contatofb.html" />
+    <Content Include="src\app\views\duvidas.html" />
+    <Content Include="src\bower_components\accordion-material\angular-material.1.0.1.css" />
     <Content Include="src\bower_components\angular-locale-pt-br\.bower.json" />
     <Content Include="src\bower_components\angular-locale-pt-br\bower.json" />
     <Content Include="src\bower_components\angular-locale-pt-br\README.md" />
@@ -1642,6 +1648,7 @@
     <Folder Include="src\app\styles\" />
     <Folder Include="src\app\views\" />
     <Folder Include="src\bower_components\" />
+    <Folder Include="src\bower_components\accordion-material\" />
     <Folder Include="src\bower_components\angular-animate\" />
     <Folder Include="src\bower_components\angular-aria\" />
     <Folder Include="src\bower_components\angular-bootstrap\" />

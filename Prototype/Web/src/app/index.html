@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css?simvs1" />
   <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css?simvs1" />
   <link rel="stylesheet" href="../bower_components/angular-ui-notification/dist/angular-ui-notification.css?simvs1" />
+  <link rel="stylesheet" href="../bower_components/accordion-material/angular-material.1.0.1.css?simvs1" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -49,6 +50,8 @@
           <ul class="nav nav-pills nav-stacked">
             <li><a ng-href="#/main" ng-click="toggleLeft()"><i class="fa fa-home" aria-hidden="true"></i> Início</a></li>
             <li><a ng-href="#/investimento" ng-click="toggleLeft()"><i class="fa fa-money" aria-hidden="true"></i> Investir</a></li>
+            <li><a ng-href="#/duvidas" ng-click="toggleLeft()"><i class="fa fa-question-circle" aria-hidden="true"></i> Dúvidas</a></li>
+            <li><a ng-href="https://m.me/cashfintech" target="_blank" ng-click="toggleLeft()"><i class="fa fa-comments" aria-hidden="true"></i> Contato</a></li>
             <!--<li><a ng-href="#/transacoes" ng-click="toggleLeft()"><i class="fa fa-exchange" aria-hidden="true"></i> Trsansações</a></li>-->
             <!--<li><a ng-href="#/contatos" ng-click="toggleLeft()"><i class="fa fa-users" aria-hidden="true"></i> Contatos</a></li>-->
             <!--<li><a ng-href="#/cartoes" ng-click="toggleLeft()"><i class="fa fa-credit-card" aria-hidden="true"></i> Cartões de Crédito</a></li>-->
@@ -255,10 +258,11 @@
   <script src="../bower_components/angular-ui-notification/dist/angular-ui-notification.min.js?simvs1"></script>
   <script src="../bower_components/angular-locale-pt-br/angular-locale_pt-br.js?simvs1"></script>
   <script src="../bower_components/moment/moment.js?simvs1"></script>
+  <script src="../bower_components/accordion-material/angular-material.1.0.1.js?simvs1"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/app.js?simvs1"></script>
+  <script src="scripts/app.js?simvs2"></script>
   <script src="scripts/controllers/main.js?simvs1"></script>
   <script src="scripts/controllers/about.js?simvs1"></script>
   <script src="scripts/controllers/login.js?simvs1"></script>
@@ -279,6 +283,9 @@
   <script src="scripts/controllers/comoinvestir.js?simvs1"></script>
   <script src="scripts/controllers/cadastrar.js?simvs1"></script>
   <script src="scripts/controllers/cadastrarmail.js?simvs1"></script>
+  <script src="scripts/controllers/duvidas.js?simvs1"></script>
+  <script src="scripts/controllers/contato.js?simvs1"></script>
+  <script src="scripts/controllers/contatofb.js?simvs1"></script>
   <!-- endbuild -->
 </body>
 </html>

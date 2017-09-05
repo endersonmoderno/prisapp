@@ -128,6 +128,21 @@ angular
               controller: 'CadastrarmailCtrl',
               controllerAs: 'cadastrarmail'
             })
+            .when('/duvidas', {
+              templateUrl: 'views/duvidas.html',
+              controller: 'DuvidasCtrl',
+              controllerAs: 'duvidas'
+            })
+            .when('/contato', {
+              templateUrl: 'views/contato.html',
+              controller: 'ContatoCtrl',
+              controllerAs: 'contato'
+            })
+            .when('/contatofb', {
+              templateUrl: 'views/contatofb.html',
+              controller: 'ContatofbCtrl',
+              controllerAs: 'contatofb'
+            })
             .otherwise({
                 redirectTo: '/'
             });
