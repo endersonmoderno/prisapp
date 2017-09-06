@@ -44,6 +44,7 @@ angular.module('prisappApp')
             investimento: investimento.valor,
             rendimento: investimento.rendimento,
             periodo: investimento.periodo,
+            comissaovalor: investimento.comissaovalor,
             percentual: investimento.percentual,
             total: investimento.total,
             usuario_id: $scope.usuario.id,

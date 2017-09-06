@@ -59,7 +59,8 @@ angular.module('prisappApp')
                         rendimento: 0,
                         total: 0,
                         percentual: 0,
-                        data: null
+                        data: null,
+                        comissaovalor: 0
                     };
 
                     //carregar dados para calculo investimento
@@ -212,6 +213,7 @@ angular.module('prisappApp')
             $scope.obj.rendimento = rendtotalperiodo;
             $scope.obj.total = investimento + rendtotalperiodo;
             $scope.obj.percentual = parseInt(rendtotalperiodo / investimento * 100);
+            $scope.obj.comissaovalor = comissaovalor * $scope.obj.periodo;
         };
 
         $scope.continuar = function () {
