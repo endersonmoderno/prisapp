@@ -1,141 +1,287 @@
-﻿<div ng-cloak class="col-md-12 text-center">
-  <div class="row">
-    <strong>Você está vendo nossa apresentação</strong>
-    <md-button ng-href="#/login" class="md-raised md-default lnkpular" style="color:white; background-color:red;">
-      <i class="fa fa-fast-forward" aria-hidden="true"></i> Pular apresentação - ir para o aplicativo
-    </md-button>
+<main ng-cloak>
+  <div id="divLoad" class="loading" ng-show="ShowLoad">
+    <div layout="row" layout-sm="column" layout-align="space-around">
+      <md-progress-circular md-mode="indeterminate" md-diameter="96"></md-progress-circular>
+    </div>
+    <br /><p>{{ MsgDivLoad }}</p>
   </div>
-  <hr style="clear:both;" />
-  <div class="row" style="height:250px; padding: 10px;">
-    <div ng-show="show == 1">
-      <h2>Investimento Fácil</h2>
-      <p>Com o Pri$ você é capaz de investir em criptomoedas de maneira fácil e com segurança.</p>
-      <img src="images/comeceinvestir/1.jpg" />
+
+  <div class="container">
+    <div class="row">
+      <div style="margin-top: 30px; text-align:center;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p><strong>Você está vendo nossa apresentação</strong></p>
+      </div>
     </div>
-    <div ng-show="show == 2">
-      <h2>Criptomoedas</h2>
-      <p>Atualmente existem diversas criptomoedas no mercado.</p>
-      <img style="height:100px;" src="images/comeceinvestir/2.jpg" />
-      <br /><br /><strong>Você não precisa entender do assunto, nós fazemos isso por você.</strong>
+    <div class="row">
+      <div class="col-lg-12">
+        <form name="myform" class="form-validation" role="form" novalidate>
+          <div class="animate-switch-container" ng-switch on="stage" ng-class="{forward: direction, backward:!direction}">
+            <div class="animate-switch" ng-switch-default>
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Pri$ - Protótipo</h4>
+                  <p>Com este aplicativo você será capaz de investir em criptomoedas de maneira fácil e com segurança.</p>
+                  <img src="images/pig.png" style="height: 150px;" />
+                  <hr />
+                  <button type="button" class="btn btn-primary btentrar" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage1">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Nossa Startup</h4>
+                  <p><strong>Pri$</strong> é uma Startup do curso de MBA da FIAP, precisamos da sua ajuda para transformá-la em realidade.</p>
+                  <img src="images/comeceinvestir/startup.jpg" style="height: 120px;" class="imgcirc" />
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <button type="button" class="btn btn-primary btlinha" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage2">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Como Funciona?</h4>
+                  <p>Basta você se cadastrar e já estará nos ajudando a transformar este protótipo em realidade.</p>
+                  <img src="images/comeceinvestir/prototipo.png" style="height: 120px;" class="imgcirc" />
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <button type="button" class="btn btn-primary btlinha" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage3">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">A Nossa Idéia</h4>
+                  <p>Atualmente existem diversas criptomoedas no mercado.</p>
+                  <img style="height:80px;" class="imgcirc" src="images/comeceinvestir/2.jpg" />
+                  <br /><br />
+                  <p><strong>Você não precisa entender do assunto, nós faremos isso por você.</strong></p>
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <button type="button" class="btn btn-primary btlinha" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage4">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Por que usar o Pri$ ?</h4>
+                  <p>O <strong>Pri$</strong> selecionará as melhores criptomoedas para você.</p>
+                  <img style="height:80px;" class="imgcirc" src="images/comeceinvestir/3.jpg" />
+                  <br /><br />
+                  <p><strong>Assim você não perde seu dinheiro. Rende muito mais que os investimentos tradicionais.</strong></p>
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <button type="button" class="btn btn-primary btlinha" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage5">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Não perca dinheiro</h4>
+                  <p>Nós iremos aplicar seu dinheiro nas melhores cotações.</p>
+                  <img style="height:80px;" class="imgcirc" src="images/comeceinvestir/7.jpg" />
+                  <br /><br />
+                  <p><strong>E se você desistir, terá todo o seu dinheiro de volta.</strong></p>
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <button type="button" class="btn btn-primary btlinha" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage6">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Fácil e Seguro</h4>
+                  <p>Faça quantas simulações desejar.</p>
+                  <img style="height:80px;" class="imgcirc" src="images/comeceinvestir/10.jpg" />
+                  <br /><br />
+                  <p><strong>Esta é apenas uma versão de teste, você pode usar sem riscos. Não é necessário usar dinheiro de verdade.</strong></p>
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <button type="button" class="btn btn-primary btlinha" ng-click="next()">Continuar</button>
+                </div>
+              </div>
+            </div>
+            <div class="animate-switch" ng-switch-when="stage7">
+              <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center;">
+                  <h4 style="margin-top: 0px;">Vamos Começar?</h4>
+                  <p>Cadastre-se agora e veja quais são as melhores criptomoedas para investir!</p>
+                  <img style="height:80px;" class="imgcirc" src="images/comeceinvestir/12.jpg" />
+                  <br /><br />
+                  <p><strong>Nos ajude a lançar este App, basta se cadastrar.</strong></p>
+                  <hr />
+                  <button type="button" class="btn btn-info btlinha" ng-click="back()"> Voltar </button>&nbsp;
+                  <a href="#/cadastrarmail" class="btn btn-warning btlinha">Cadastre-se</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div ng-show="show == 3">
-      <h2>Sem risco</h2>
-      <p>E por isso nós assumimos todos os riscos.</p>
-      <img src="images/comeceinvestir/3.jpg" />
-      <h4>E você não perde dinheiro.</h4>
-    </div>
-    <div ng-show="show == 4">
-      <h2>Qualquer valor</h2>
-      <p>Você poderá selecionar o valor que quiser investir.</p>
-      <hr />
-      <img src="images/comeceinvestir/4.png" />
-    </div>
-    <div ng-show="show == 5">
-      <h2>No seu tempo</h2>
-      <p>Bastará escolher a quantidade de meses para o tempo de investimento.</p>
-      <hr />
-      <img src="images/comeceinvestir/5.png" />
-    </div>
-    <div ng-show="show == 6">
-      <h2>Veja quanto</h2>
-      <p>Nós calculamos o seu rendimento estimado com base nos últimos meses.</p>
-      <hr />
-      <img src="images/comeceinvestir/6.png" />
-    </div>
-    <div ng-show="show == 7">
-      <h2>Mais ganhos</h2>
-      <p>Quanto maior for o valor e os meses selecionados, maiores serão os seus rendimentos.</p>
-      <img src="images/comeceinvestir/7.jpg" />
-    </div>
-    <div ng-show="show == 8">
-      <h2>Seu dinheiro</h2>
-      <p>E se você desistir antes do tempo, terá todo o seu dinheiro de volta.</p>
-      <img style="height:100px;" src="images/comeceinvestir/8.jpg" />
-      <h4>Nós transferimos tudo direto para sua conta bancária sem tarifas.</h4>
-    </div>
-    <div ng-show="show == 9">
-      <h2>Mais dinheiro</h2>
-      <p>Sempre que você cumprir o tempo selecionado, você poderá ter mais dinheiro.</p>
-      <img style="height:100px;" src="images/comeceinvestir/9.jpg" />
-    </div>
-    <div ng-show="show == 10">
-      <h2>Fácil, Seguro, Sem Riscos e Sem Complicações.</h2>
-      <img style="height:100px;" src="images/comeceinvestir/10.jpg" />
-    </div>
-    <div ng-show="show == 11">
-      <h2>Rende muito mais</h2>
-      <p>Seu dinheiro poderá render muito mais do que os investimentos tradicionais.</p>
-      <img src="images/comeceinvestir/11.jpg" />
-    </div>
-    <div ng-show="show == 12">
-      <h2>Notificações</h2>
-      <p>Todas as semanas você receberá notificações informando seus ganhos.</p>
-      <img src="images/comeceinvestir/12.jpg" />
-    </div>
-    <div ng-show="show == 13">
-      <h2>Bons investimentos!</h2>
-      <img src="images/comeceinvestir/13.jpg" />
+    <hr />
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <md-button ng-href="#/login" class="md-raised md-default btentrar" style="color:white; background-color:red;">
+          <i class="fa fa-fast-forward" aria-hidden="true"></i> Pular apresentação
+        </md-button>
+      </div>
     </div>
   </div>
-  <hr />
-  <div class="row">
-    <md-button ng-href="#/login" ng-show="show == 13" class="md-raised md-primary lnkproximo"><i class="fa fa-arrow-right" aria-hidden="true"></i> Começar</md-button>
-    <md-button ng-click="show = (show + 1)" ng-show="show < 13" class="md-raised md-primary lnkproximo"><i class="fa fa-arrow-right" aria-hidden="true"></i> Próximo</md-button>
-  </div>
-  <hr />
-  <div class="row">
-    <div style="width:225px; margin: 0 auto;">
-      <div ng-click="show = 1" class="circulo {{show === 1 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 2" class="circulo {{show === 2 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 3" class="circulo {{show === 3 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 4" class="circulo {{show === 4 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 5" class="circulo {{show === 5 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 6" class="circulo {{show === 6 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 7" class="circulo {{show === 7 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 8" class="circulo {{show === 8 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 9" class="circulo {{show === 9 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 10" class="circulo {{show === 10 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 11" class="circulo {{show === 11 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 12" class="circulo {{show === 12 ? 'circulocor' : ''}}"></div>
-      <div ng-click="show = 13" class="circulo {{show === 13 ? 'circulocor' : ''}}"></div>
-    </div>
-  </div>
-</div>
+
+</main>
 <style type="text/css">
 
-  img {
+  .imgcirc {
     border-radius: 10px;
   }
 
-  .container {
-    margin-top: 0px !important;
+  .btlinha{
+    width:100px;
   }
 
-  .lnkpular {
-    font-size: 10px;
-    line-height: 25px;
-    min-height: 25px;
+  /*------>>> Animations <<<-----*/
+  .fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease-in;
+    -moz-transition: opacity 0.25s ease-in;
+    -o-transition: opacity 0.25s ease-in;
+    /*-ms-transition: opacity 0.25s ease-in;*/
+    transition: opacity 0.25s ease-in;
+    transition-delay: 0.25s;
   }
 
-  .lnkproximo {
-    font-size: 10px;
-    line-height: 25px;
-    min-height: 25px;
+    .fade.in {
+      opacity: 1;
+    }
+
+  .animate-switch-container {
+    background-size: 50px 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 6px 6px 15px gray;
+    height: 350px;
+    margin-left: 10px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    width: 90%;
   }
 
-  .circulo {
-    width: 15px;
-    height: 15px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px;
-    background: none;
-    border: 1px solid gray;
-    float: left;
-    margin: 1px;
+  .animate-switch {
+    padding: 10px;
+    width: 100%;
   }
 
-  .circulocor {
-    background: gray !important;
+    .animate-switch.ng-animate {
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      position: absolute;
+    }
+    /* hide leaving slide  */
+    /* show */
+    .animate-switch.ng-leave {
+      left: 0;
+    }
+  /* hide */
+  .forward .animate-switch.ng-leave.ng-leave-active {
+    left: -100%;
+  }
+
+  .backward .animate-switch.ng-leave.ng-leave-active {
+    left: 100%;
+  }
+  /* show entering slide  */
+  /* hide */
+  .forward .animate-switch.ng-enter {
+    left: 100%;
+  }
+
+  .backward .animate-switch.ng-enter {
+    left: -100%;
+  }
+  /* show */
+  .animate-switch.ng-enter.ng-enter-active {
+    left: 0;
+  }
+
+
+  /*-----------------------------------*/
+  /*------>>> Validation <<<-----------*/
+  /*-----------------------------------*/
+
+  .form-validation input.ng-invalid-maxlength {
+    border: 2px solid #D9272D;
+  }
+
+
+  .length-error {
+    color: #D9272D;
+    display: block;
+    font-size: 12px;
+    opacity: .8;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    line-height: 18px;
+    padding: 10px 10px 5px 10px;
+    margin: -25px 0 20px 0;
+    background-color: #E3E3E3;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .input-error {
+    border: 2px solid #D9272D;
+  }
+
+  /*-----------------------------------*/
+  /*------->>> FORM STYLES <<<---------*/
+  /*-----------------------------------*/
+
+  .note {
+    display: block;
+    font-size: 12px;
+    opacity: .8;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+    line-height: 18px;
+  }
+
+  .note-input {
+    padding: 10px 10px 5px 10px;
+    margin: -25px 0 20px 0;
+    background-color: #E3E3E3;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .note-input-error, .required-error-banner {
+    background-color: rgba(217, 39, 45, 0.5);
+  }
+
+  /*-----------------------------------*/
+  /*----------->>> HELPERS <<<-------------*/
+  /*-----------------------------------*/
+
+  /*
+   Allow angular.js to be loaded in body, hiding cloaked elements until
+   templates compile.  The !important is important given that there may be
+   other selectors that are more specific or come later and might alter display.
+  */
+  [ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+  }
+
+  .danger {
+    color: red;
+    font-size: 12px;
   }
 </style>

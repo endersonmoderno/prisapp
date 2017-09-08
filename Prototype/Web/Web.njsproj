@@ -851,6 +851,8 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
+    <Content Include="src\app\images\comeceinvestir\prototipo.png" />
+    <Content Include="src\app\images\comeceinvestir\startup.jpg" />
     <Content Include="src\app\views\contatofb.html" />
     <Content Include="src\app\views\duvidas.html" />
     <Content Include="src\bower_components\accordion-material\angular-material.1.0.1.css" />
