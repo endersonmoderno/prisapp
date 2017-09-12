@@ -18,6 +18,7 @@ angular.module('prisappApp')
 
         //define o host padrão
         $localStorage.simhost = "http://localhost:81/PrisAdmin/simples/";
+        //$localStorage.simhost = "http://www.gruposvb.com.br/fintechapi/";
 
         $scope.msgerro = "";
         $scope.ShowLoad = false;
