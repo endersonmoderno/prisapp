@@ -853,6 +853,13 @@
     <Content Include="package.json" />
     <Content Include="src\app\images\comeceinvestir\prototipo.png" />
     <Content Include="src\app\images\comeceinvestir\startup.jpg" />
+    <Content Include="src\app\images\moedas\btc.png" />
+    <Content Include="src\app\images\moedas\dash.png" />
+    <Content Include="src\app\images\moedas\etc.png" />
+    <Content Include="src\app\images\moedas\eth.png" />
+    <Content Include="src\app\images\moedas\ltc.png" />
+    <Content Include="src\app\images\moedas\nxt.png" />
+    <Content Include="src\app\images\moedas\xmr.png" />
     <Content Include="src\app\views\contatofb.html" />
     <Content Include="src\app\views\duvidas.html" />
     <Content Include="src\bower_components\accordion-material\angular-material.1.0.1.css" />
@@ -1645,6 +1652,7 @@
     <Folder Include="src\app\" />
     <Folder Include="src\app\images\" />
     <Folder Include="src\app\images\comeceinvestir\" />
+    <Folder Include="src\app\images\moedas\" />
     <Folder Include="src\app\scripts\" />
     <Folder Include="src\app\scripts\controllers\" />
     <Folder Include="src\app\styles\" />
